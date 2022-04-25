@@ -224,13 +224,13 @@
     PostalCode: '14423',
     CountryCode: 'US'
   };
-  let ShipTo = {
-    AddressLine: '3177 Lehigh Street',
-    City: 'Caledonia',
-    StateProvinceCode: 'NY',
-    PostalCode: '14423',
-    CountryCode: 'US'
-  };
+  // let ShipTo = {
+  //   AddressLine: '3177 Lehigh Street',
+  //   City: 'Caledonia',
+  //   StateProvinceCode: 'NY',
+  //   PostalCode: '14423',
+  //   CountryCode: 'US'
+  // };
   // let ShipTo = {
   //   AddressLine: '5000 Lehigh Street',
   //   City: 'Caledonia',
@@ -245,13 +245,13 @@
   //   PostalCode: '14423',
   //   CountryCode: 'US'
   // };
-  // const ShipTo = {
-  //   AddressLine: '',
-  //   City: '',
-  //   StateProvinceCode: 'NY',
-  //   PostalCode: '',
-  //   CountryCode: 'US'
-  // };
+  const ShipTo = {
+    AddressLine: '',
+    City: '',
+    StateProvinceCode: 'NY',
+    PostalCode: '',
+    CountryCode: 'US'
+  };
   let submitted = false;
   let view = 'form';
 

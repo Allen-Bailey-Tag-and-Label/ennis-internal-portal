@@ -7,11 +7,6 @@ const config = {
   kit: {
     adapter: adapter(),
     vite: {
-      build: {
-        commonjsOptions: {
-          include: ['./node_modules/hashlru']
-        }
-      },
       optimizeDeps: {
         include: ['hashlru']
       },
