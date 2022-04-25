@@ -245,7 +245,7 @@
   //   PostalCode: '14423',
   //   CountryCode: 'US'
   // };
-  const ShipTo = {
+  let ShipTo = {
     AddressLine: '',
     City: '',
     StateProvinceCode: 'NY',
