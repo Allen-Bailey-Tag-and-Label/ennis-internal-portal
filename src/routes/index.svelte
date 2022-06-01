@@ -36,19 +36,13 @@
   };
   const getRates = async () => {
     modal.progress.rates.show = true;
-    const result = await serverFetch({
+    const response = await fetch('/api/getRates', {
       method: 'POST',
-      headers: {
+      header: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
-        AccessLicenseNumber: '6DB61306A40AE684',
-        Username: 'bobmcaleavey01',
-        Password: '123ReallyStrongPassword$+',
-        transId: 'Tran123',
-        transactionSrc: 'XOLT'
+        'Content-Type': 'application/json'
       },
-      href: `https://bobthered-cors-anywhere.herokuapp.com/${'https://onlinetools.ups.com/ship/v1/rating/Shop'}`,
-      body: {
+      body: JSON.stringify({
         RateRequest: {
           Shipment: {
             Shipper: {
@@ -70,8 +64,10 @@
             }
           }
         }
-      }
+      })
     });
+
+    const result = await response.json();
 
     rates = result.RateResponse.RatedShipment.reduce((obj, { Service, TotalCharges }) => {
       const row = {
@@ -137,49 +133,51 @@
   };
   const validateAddress = async () => {
     modal.progress.validation.show = true;
-    const result = await serverFetch({
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        AccessLicenseNumber: '6DB61306A40AE684',
-        Username: 'bobmcaleavey01',
-        Password: '123ReallyStrongPassword$+'
-      },
-      href: `https://bobthered-cors-anywhere.herokuapp.com/${'https://onlinetools.ups.com/addressvalidation/v1/3'}`,
-      body: {
-        XAVRequest: {
-          AddressKeyFormat: {
-            AddressLine: [ShipTo.AddressLine],
-            PoliticalDivision2: ShipTo.City,
-            PoliticalDivision1: ShipTo.StateProvinceCode,
-            PostcodePrimaryLow: ShipTo.PostalCode,
-            CountryCode: 'US'
+    try {
+      const response = await fetch('/api/validateAddress', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          XAVRequest: {
+            AddressKeyFormat: {
+              AddressLine: [ShipTo.AddressLine],
+              PoliticalDivision2: ShipTo.City,
+              PoliticalDivision1: ShipTo.StateProvinceCode,
+              PostcodePrimaryLow: ShipTo.PostalCode,
+              CountryCode: 'US'
+            }
           }
-        }
+        })
+      });
+
+      const result = await response.json();
+
+      // destructure result
+      const {
+        XAVResponse: { Candidate, NoCandidatesIndicator }
+      } = result;
+      console.log({ Candidate, NoCandidatesIndicator });
+
+      // check if no candidates available
+      if (Candidate === undefined) throw 'Address could not be validated';
+
+      // check if multiple candidates
+      if (Array.isArray(Candidate)) {
+        modal.progress.validation.show = false;
+        modal.candidate.candidates = Candidate;
+        modal.candidate.show = true;
+        throw 'Multiple candidates were found';
       }
-    });
 
-    // destructure result
-    const {
-      XAVResponse: { Candidate, NoCandidatesIndicator }
-    } = result;
-    console.log({ Candidate, NoCandidatesIndicator });
-
-    // check if no candidates available
-    if (Candidate === undefined) throw 'Address could not be validated';
-
-    // check if multiple candidates
-    if (Array.isArray(Candidate)) {
-      modal.progress.validation.show = false;
-      modal.candidate.candidates = Candidate;
-      modal.candidate.show = true;
-      throw 'Multiple candidates were found';
+      const { AddressClassification, AddressKeyFormat } = Candidate;
+      classification = AddressClassification.Description;
+      updateShipToAddress(AddressKeyFormat);
+    } catch (error) {
+      throw error;
     }
-
-    const { AddressClassification, AddressKeyFormat } = Candidate;
-    classification = AddressClassification.Description;
-    updateShipToAddress(AddressKeyFormat);
     modal.progress.validation.show = false;
   };
 

@@ -27,6 +27,8 @@ export const serverFetch = async (params) => {
   }
 
   const response = await fetch(href, options);
+
+  if (response.status !== 200) throw 'Error.  Contact administrator';
   const data = await (responseType === 'JSON' ? response.json() : response.text());
   return data;
 };
