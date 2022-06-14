@@ -19,11 +19,7 @@
     P,
     SafeArea,
     Select,
-    SubmitButton,
-    Table,
-    Tbody,
-    Td,
-    Tr
+    SubmitButton
   } from '@components';
   import { X } from 'svelte-hero-icons';
 
@@ -89,6 +85,8 @@
     submitted = true;
     try {
       await getRates();
+      await saveQuote();
+      goto(`/quote/${quote}`);
     } catch (error) {
       modal.error.body = error;
       modal.error.show = true;

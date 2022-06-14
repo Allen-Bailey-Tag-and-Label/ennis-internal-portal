@@ -11,6 +11,7 @@
   // props (external)
   export let classification = '';
   export let date = '';
+  export let packageInfo = {};
   export let quote = 0;
   export let rates = [];
   export let shipper = {};
@@ -47,6 +48,8 @@
             >{shipTo.AddressLine} {shipTo.City}, {shipTo.StateProvinceCode} {shipTo.PostalCode}</P
           >
           <P><b>Classification:</b></P><P>{classification}</P>
+          <P><b>Total Packages:</b></P><P>{packageInfo?.Packages}</P>
+          <P><b>Total Weight:</b></P><P>{packageInfo?.Weight}</P>
         </div>
         <Table>
           <Tbody>

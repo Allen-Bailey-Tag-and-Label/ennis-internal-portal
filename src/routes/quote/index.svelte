@@ -62,6 +62,7 @@
     { label: '', value: '' },
     { label: 'Commercial', value: 'Commercial' },
     { label: 'Residential', value: 'Residential' },
+    { label: 'Unclassified', value: 'Unclassified' },
     { label: 'Unknown', value: 'Unknown' }
   ];
   let dateFrom = '';
