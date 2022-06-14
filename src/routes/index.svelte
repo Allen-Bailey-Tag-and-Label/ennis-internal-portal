@@ -2,6 +2,9 @@
   // imports
   import { serverFetch } from '@lib/_helpers';
   import { stateOptions } from '@lib/stateAbbreviations';
+  import provinces from 'provinces-ca';
+  import states from 'states-us';
+  import zipcodes from 'zipcodes';
 
   // components
   import {
@@ -80,8 +83,6 @@
       if (a.rate > b.rate) return 1;
       return 0;
     });
-
-    console.log({ rates });
 
     view = 'rates';
     modal.progress.rates.show = false;
@@ -180,6 +181,20 @@
     }
     modal.progress.validation.show = false;
   };
+  const zipChangeHandler = (whichAddress) => {
+    const zip = whichAddress === 'shipper' ? Shipper.PostalCode : ShipTo.PostalCode;
+    const result = zipcodes.lookup(zip);
+    if (result !== undefined) {
+      if (whichAddress === 'shipper') {
+        Shipper.City = result.city;
+        Shipper.StateProvinceCode = result.state;
+      }
+      if (whichAddress === 'shipTo') {
+        ShipTo.City = result.city;
+        ShipTo.StateProvinceCode = result.state;
+      }
+    }
+  };
 
   // props (internal)
   let classification = 'Unclassified';
@@ -246,7 +261,7 @@
   let ShipTo = {
     AddressLine: '',
     City: '',
-    StateProvinceCode: 'NY',
+    StateProvinceCode: '',
     PostalCode: '',
     CountryCode: 'US'
   };
@@ -278,23 +293,31 @@
             <div class="flex flex-col space-y-[1rem] flex-grow">
               <H6>Ship From</H6>
               <Fieldset legend="Address"><Input bind:value={Shipper.AddressLine} /></Fieldset>
+              <Fieldset legend="ZIP"
+                ><Input
+                  type="number"
+                  bind:value={Shipper.PostalCode}
+                  on:change={() => zipChangeHandler('shipper')}
+                /></Fieldset
+              >
               <Fieldset legend="City"><Input bind:value={Shipper.City} /></Fieldset>
               <Fieldset legend="State"
                 ><Select options={stateOptions} bind:value={Shipper.StateProvinceCode} /></Fieldset
-              >
-              <Fieldset legend="ZIP"
-                ><Input type="number" bind:value={Shipper.PostalCode} /></Fieldset
               >
             </div>
             <div class="flex flex-col space-y-[1rem] flex-grow">
               <H6>Ship To</H6>
               <Fieldset legend="Address"><Input bind:value={ShipTo.AddressLine} /></Fieldset>
+              <Fieldset legend="ZIP"
+                ><Input
+                  type="number"
+                  bind:value={ShipTo.PostalCode}
+                  on:change={() => zipChangeHandler('shipTo')}
+                /></Fieldset
+              >
               <Fieldset legend="City"><Input bind:value={ShipTo.City} /></Fieldset>
               <Fieldset legend="State"
                 ><Select options={stateOptions} bind:value={ShipTo.StateProvinceCode} /></Fieldset
-              >
-              <Fieldset legend="ZIP"
-                ><Input type="number" bind:value={ShipTo.PostalCode} /></Fieldset
               >
             </div>
             <div class="flex flex-col space-y-[1rem] flex-grow">

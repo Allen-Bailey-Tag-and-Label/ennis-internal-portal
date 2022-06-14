@@ -1,4 +1,5 @@
 export const stateAbbrevations = [
+  '',
   'AL',
   'AK',
   'AS',
