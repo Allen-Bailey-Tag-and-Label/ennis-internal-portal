@@ -2,8 +2,15 @@
   // imports
   import { A, Header, Nav, Title } from '@components';
   import { page } from '$app/stores';
-  import { theme } from 'sveltewind/stores';
+  import { quotes, theme } from '@stores';
+  import { onMount } from 'svelte';
   import '../app.css';
+
+  // helpers
+  const findQuotes = async () => {
+    const response = await fetch('/api/findQuote');
+    $quotes = await response.json();
+  };
 
   // props (internal)
   const nav = [
@@ -18,6 +25,9 @@
     th: 'dark:bg-white/[.025]',
     tr: 'print:border-b-0'
   });
+
+  // lifecycle
+  onMount(async () => await findQuotes());
 </script>
 
 <Title base="Employee Internal Portal - Allen Bailey Tag & Label" />

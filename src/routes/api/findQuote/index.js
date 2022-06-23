@@ -1,6 +1,16 @@
 // imports
 import { connect } from '@lib/mongodb';
 
+export async function get() {
+  // await mongodb connection
+  const connection = await connect();
+
+  // find documents
+  const docs = await connection.db().collection('ups-quotes').find().sort({ quote: -1 }).toArray();
+
+  return { status: 200, body: docs };
+}
+
 export async function post({ request }) {
   // await mongodb connection
   const connection = await connect();

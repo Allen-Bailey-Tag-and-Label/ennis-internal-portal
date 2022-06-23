@@ -1,21 +1,19 @@
 <script>
   // imports
-  import { goto } from '$app/navigation';
   import { stateOptions } from '@lib/stateAbbreviations';
-  import { theme } from 'sveltewind/stores';
+  import { quoteFilter, quotes, theme } from '@stores';
   import { onMount } from 'svelte';
   import zipcodes from 'zipcodes';
 
   // components
   import {
     A,
+    Button,
     Fieldset,
-    Form,
     Input,
     Main,
     SafeArea,
     Select,
-    SubmitButton,
     Table,
     Tbody,
     Td,
@@ -25,39 +23,81 @@
   } from '@components';
 
   // handlers
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    await findQuotes();
-  };
   const zipChangeHandler = () => {
-    const result = zipcodes.lookup(shipTo.PostalCode);
+    const result = zipcodes.lookup($quoteFilter.shipTo.PostalCode);
     if (result !== undefined) {
-      shipTo.City = result.city;
-      shipTo.StateProvinceCode = result.state;
+      $quoteFilter.shipTo.City = result.city;
+      $quoteFilter.shipTo.StateProvinceCode = result.state;
     }
   };
 
   // helpers
-  const findQuotes = async () => {
-    const response = await fetch('/api/findQuote', {
-      method: 'POST',
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        classification,
-        dateFrom,
-        dateTo,
-        quote,
-        shipTo
-      })
+  const clearFilters = () =>
+    ($quoteFilter = {
+      classification: '',
+      dateFrom: '',
+      dateTo: '',
+      quote: '',
+      shipTo: {
+        AddressLine: '',
+        City: '',
+        StateProvinceCode: '',
+        PostalCode: ''
+      }
     });
-    results = await response.json();
+  const findQuotes = async () => {
+    const response = await fetch('/api/findQuote');
+    $quotes = await response.json();
+  };
+  const getFilteredResults = (arr) => {
+    try {
+      // destructure quoteFilter
+      const { classification, dateFrom, dateTo, quote, shipTo } = $quoteFilter;
+
+      // check if classification is not empty
+      if (classification !== '') arr = arr.filter((elem) => elem.classification === classification);
+
+      // check if quote is not empty
+      if (quote !== '') arr = arr.filter((elem) => new RegExp(quote, 'g').test(elem.quote));
+
+      // check if dateFrom is not empty
+      if (dateFrom !== '') arr = arr.filter((elem) => new Date(elem.date) >= new Date(dateFrom));
+
+      // check if dateTo is empty
+      if (dateTo !== '')
+        arr = arr.filter(
+          (elem) =>
+            new Date(elem.date) <=
+            new Date(new Date(dateTo).setDate(new Date(dateTo).getDate() + 1))
+        );
+
+      // check if AddressLine is not empty
+      if (shipTo.AddressLine !== '')
+        arr = arr.filter((elem) =>
+          new RegExp(shipTo.AddressLine, 'gi').test(elem.shipTo.AddressLine)
+        );
+
+      // check if City is not empty
+      if (shipTo.City !== '')
+        arr = arr.filter((elem) => new RegExp(shipTo.City, 'gi').test(elem.shipTo.City));
+
+      // check if StateProvinceCode is not empty
+      if (shipTo.StateProvinceCode !== '')
+        arr = arr.filter((elem) =>
+          new RegExp(shipTo.StateProvinceCode, 'gi').test(elem.shipTo.StateProvinceCode)
+        );
+
+      // check if PostalCode is not empty
+      if (shipTo.PostalCode !== '')
+        arr = arr.filter((elem) =>
+          new RegExp(shipTo.PostalCode, 'gi').test(elem.shipTo.PostalCode)
+        );
+    } catch (error) {}
+
+    return arr;
   };
 
   // props (internal)
-  let classification = '';
   const classificationOptions = [
     { label: '', value: '' },
     { label: 'Commercial', value: 'Commercial' },
@@ -65,16 +105,10 @@
     { label: 'Unclassified', value: 'Unclassified' },
     { label: 'Unknown', value: 'Unknown' }
   ];
-  let dateFrom = '';
-  let dateTo = '';
-  let results = [];
-  let quote = '';
-  let shipTo = {
-    AddressLine: '',
-    City: '',
-    StateProvinceCode: '',
-    PostalCode: ''
-  };
+  let filteredResults = [];
+
+  // props (dynamic)
+  $: if ($quoteFilter || $quotes) filteredResults = getFilteredResults($quotes);
 
   // lifecycle
   onMount(async () => await findQuotes());
@@ -83,38 +117,48 @@
 <Main>
   <SafeArea class="overflow-y-auto">
     <div class="flex flex-col space-y-[2rem] flex-grow container mx-auto py-[2rem]">
-      <Form class="flex-row space-y-0 items-end space-x-[1rem]" on:submit={submitHandler}>
+      <div class="flex flex-row space-y-0 items-end space-x-[1rem]">
         <Fieldset legend="Quote #">
-          <Input bind:value={quote} class="pr-[.5rem] text-right w-[7rem]" type="number" />
+          <Input
+            bind:value={$quoteFilter.quote}
+            class="pr-[.5rem] text-right w-[7rem]"
+            type="number"
+          />
         </Fieldset>
         <Fieldset legend="From">
-          <Input bind:value={dateFrom} class="text-right w-[10.25rem]" type="date" />
+          <Input bind:value={$quoteFilter.dateFrom} class="text-right w-[10.25rem]" type="date" />
         </Fieldset>
         <Fieldset legend="To">
-          <Input bind:value={dateTo} class="text-right w-[10.25rem]" type="date" />
+          <Input bind:value={$quoteFilter.dateTo} class="text-right w-[10.25rem]" type="date" />
         </Fieldset>
         <Fieldset legend="Address">
-          <Input bind:value={shipTo.AddressLine} />
+          <Input bind:value={$quoteFilter.shipTo.AddressLine} />
         </Fieldset>
         <Fieldset legend="ZIP"
           ><Input
-            bind:value={shipTo.PostalCode}
+            bind:value={$quoteFilter.shipTo.PostalCode}
             class="pr-[.5rem] text-right w-[6rem]"
             on:change={() => zipChangeHandler('shipper')}
             type="number"
           /></Fieldset
         >
         <Fieldset legend="City">
-          <Input bind:value={shipTo.City} />
+          <Input bind:value={$quoteFilter.shipTo.City} />
         </Fieldset>
         <Fieldset legend="State"
-          ><Select options={stateOptions} bind:value={shipTo.StateProvinceCode} /></Fieldset
+          ><Select
+            options={stateOptions}
+            bind:value={$quoteFilter.shipTo.StateProvinceCode}
+          /></Fieldset
         >
         <Fieldset legend="Classification"
-          ><Select options={classificationOptions} bind:value={classification} /></Fieldset
+          ><Select
+            options={classificationOptions}
+            bind:value={$quoteFilter.classification}
+          /></Fieldset
         >
-        <SubmitButton>Find</SubmitButton>
-      </Form>
+        <Button on:click={clearFilters}>Clear</Button>
+      </div>
       <Table>
         <Thead>
           <Th class="text-right">Quote #</Th>
@@ -127,7 +171,7 @@
           <Th />
         </Thead>
         <Tbody>
-          {#each results as result}
+          {#each filteredResults as result}
             <Tr>
               <Td class="text-right">{result.quote}</Td>
               <Td class="text-right"
