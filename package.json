@@ -2,7 +2,7 @@
   "name": "ennis-internal-portal",
   "version": "0.2.0",
   "scripts": {
-    "dev": "svelte-kit dev -o --host",
+    "dev": "svelte-kit dev -o --host --port 3001",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",

@@ -1,7 +1,7 @@
 <script>
   // imports
   import { stateOptions } from '@lib/stateAbbreviations';
-  import { quoteFilter, quotes, theme } from '@stores';
+  import { pagination, quoteFilter, quotes, theme } from '@stores';
   import { onMount } from 'svelte';
   import zipcodes from 'zipcodes';
 
@@ -106,9 +106,35 @@
     { label: 'Unknown', value: 'Unknown' }
   ];
   let filteredResults = [];
+  const resultsOptions = [
+    { label: '10 results', value: 10 },
+    { label: '25 results', value: 25 },
+    { label: '50 results', value: 50 },
+    { label: '100 results', value: 100 },
+    { label: 'All', value: 'All' }
+  ];
 
   // props (dynamic)
   $: if ($quoteFilter || $quotes) filteredResults = getFilteredResults($quotes);
+  $: showingOptions =
+    $pagination.number === 'All'
+      ? [{ label: `1 - ${filteredResults.length}` }]
+      : [...Array(Math.ceil(filteredResults.length / +$pagination.number))].map((_, i) => {
+          return {
+            label: `${i * $pagination.number + 1} - ${Math.min(
+              filteredResults.length,
+              (i + 1) * $pagination.number
+            )}`,
+            value: i
+          };
+        });
+  $: paginatedResults =
+    $pagination.number === 'All'
+      ? [...filteredResults]
+      : [...filteredResults].slice(
+          +$pagination.current * +$pagination.number,
+          (+$pagination.current + 1) * +$pagination.number - 1
+        );
 
   // lifecycle
   onMount(async () => await findQuotes());
@@ -159,6 +185,21 @@
         >
         <Button on:click={clearFilters}>Clear</Button>
       </div>
+      <div class="flex items-end space-x-[1rem]">
+        <Fieldset legend="Showing">
+          <Select bind:value={$pagination.current} options={showingOptions} />
+        </Fieldset>
+        <Fieldset legend="Display">
+          <Select
+            bind:value={$pagination.number}
+            options={resultsOptions}
+            on:change={() => {
+              if ($pagination.current > Math.ceil(filteredResults.length / +$pagination.number) - 1)
+                $pagination.current = Math.ceil(filteredResults.length / +$pagination.number) - 1;
+            }}
+          />
+        </Fieldset>
+      </div>
       <Table>
         <Thead>
           <Th class="text-right">Quote #</Th>
@@ -171,7 +212,7 @@
           <Th />
         </Thead>
         <Tbody>
-          {#each filteredResults as result}
+          {#each paginatedResults as result}
             <Tr>
               <Td class="text-right">{result.quote}</Td>
               <Td class="text-right"
