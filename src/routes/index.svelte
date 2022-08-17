@@ -2,6 +2,7 @@
   // imports
   import { goto } from '$app/navigation';
   import { stateOptions } from '@lib/stateAbbreviations';
+  import { quote } from '@stores';
   import zipcodes from 'zipcodes';
 
   // components
@@ -42,10 +43,10 @@
         RateRequest: {
           Shipment: {
             Shipper: {
-              Address: Shipper
+              Address: $quote.Shipper
             },
             ShipTo: {
-              Address: ShipTo
+              Address: $quote.ShipTo
             },
             Package: {
               PackagingType: {
@@ -55,7 +56,9 @@
                 UnitOfMeasurement: {
                   Code: 'LBS'
                 },
-                Weight: Math.ceil(+PackageInfo.Weight / +PackageInfo.Packages).toString()
+                Weight: Math.ceil(
+                  +$quote.PackageInfo.Weight / +$quote.PackageInfo.Packages
+                ).toString()
               }
             }
           }
@@ -68,7 +71,7 @@
     rates = result.RateResponse.RatedShipment.reduce((obj, { Service, TotalCharges }) => {
       const row = {
         description: serviceCodes[Service.Code],
-        rate: +TotalCharges.MonetaryValue * +PackageInfo.Packages
+        rate: +TotalCharges.MonetaryValue * +$quote.PackageInfo.Packages
       };
       return [...obj, row];
     }, []).sort((a, b) => {
@@ -86,7 +89,7 @@
     try {
       await getRates();
       await saveQuote();
-      goto(`/quote/${quote}`);
+      goto(`/quote/${quoteNum}`);
     } catch (error) {
       modal.error.body = error;
       modal.error.show = true;
@@ -104,14 +107,14 @@
       },
       body: JSON.stringify({
         classification,
-        PackageInfo,
+        PackageInfo: $quote.PackageInfo,
         rates,
-        Shipper,
-        ShipTo
+        Shipper: $quote.Shipper,
+        ShipTo: $quote.ShipTo
       })
     });
     const result = await response.json();
-    quote = result.quote;
+    quoteNum = result.quote;
     modal.progress.saveQuote.show = false;
   };
   const submitHandler = async (e) => {
@@ -124,7 +127,7 @@
       await validateAddress();
       await getRates();
       await saveQuote();
-      goto(`/quote/${quote}`);
+      goto(`/quote/${quoteNum}`);
     } catch (error) {
       modal.error.body = error;
       modal.error.show = true;
@@ -140,7 +143,7 @@
     PoliticalDivision2,
     PostcodePrimaryLow
   }) => {
-    ShipTo = {
+    $quote.ShipTo = {
       AddressLine: AddressLine,
       City: PoliticalDivision2,
       StateProvinceCode: PoliticalDivision1,
@@ -160,10 +163,10 @@
         body: JSON.stringify({
           XAVRequest: {
             AddressKeyFormat: {
-              AddressLine: [ShipTo.AddressLine],
-              PoliticalDivision2: ShipTo.City,
-              PoliticalDivision1: ShipTo.StateProvinceCode,
-              PostcodePrimaryLow: ShipTo.PostalCode,
+              AddressLine: [$quote.ShipTo.AddressLine],
+              PoliticalDivision2: $quote.ShipTo.City,
+              PoliticalDivision1: $quote.ShipTo.StateProvinceCode,
+              PostcodePrimaryLow: $quote.ShipTo.PostalCode,
               CountryCode: 'US'
             }
           }
@@ -198,16 +201,16 @@
     modal.progress.validation.show = false;
   };
   const zipChangeHandler = (whichAddress) => {
-    const zip = whichAddress === 'shipper' ? Shipper.PostalCode : ShipTo.PostalCode;
+    const zip = whichAddress === 'shipper' ? $quote.Shipper.PostalCode : $quote.ShipTo.PostalCode;
     const result = zipcodes.lookup(zip);
     if (result !== undefined) {
       if (whichAddress === 'shipper') {
-        Shipper.City = result.city;
-        Shipper.StateProvinceCode = result.state;
+        $quote.Shipper.City = result.city;
+        $quote.Shipper.StateProvinceCode = result.state;
       }
       if (whichAddress === 'shipTo') {
-        ShipTo.City = result.city;
-        ShipTo.StateProvinceCode = result.state;
+        $quote.ShipTo.City = result.city;
+        $quote.ShipTo.StateProvinceCode = result.state;
       }
     }
   };
@@ -235,11 +238,7 @@
       }
     }
   };
-  let PackageInfo = {
-    Packages: '1',
-    Weight: '30'
-  };
-  let quote = 0;
+  let quoteNum = 0;
   let rates = {};
   const serviceCodes = {
     '03': 'Ground',
@@ -249,41 +248,6 @@
     '13': 'Next Day Air Saver',
     '01': 'Next Day Air',
     '14': 'Next Day Air Early'
-  };
-  let Shipper = {
-    AddressLine: '3177 Lehigh Street',
-    City: 'Caledonia',
-    StateProvinceCode: 'NY',
-    PostalCode: '14423',
-    CountryCode: 'US'
-  };
-  // let ShipTo = {
-  //   AddressLine: '3177 Lehigh Street',
-  //   City: 'Caledonia',
-  //   StateProvinceCode: 'NY',
-  //   PostalCode: '14423',
-  //   CountryCode: 'US'
-  // };
-  // let ShipTo = {
-  //   AddressLine: '5000 Lehigh Street',
-  //   City: 'Caledonia',
-  //   StateProvinceCode: 'NY',
-  //   PostalCode: '14423',
-  //   CountryCode: 'US'
-  // };
-  // const ShipTo = {
-  //   AddressLine: 'asdf',
-  //   City: 'Caledonia',
-  //   StateProvinceCode: 'NY',
-  //   PostalCode: '14423',
-  //   CountryCode: 'US'
-  // };
-  let ShipTo = {
-    AddressLine: '',
-    City: '',
-    StateProvinceCode: '',
-    PostalCode: '',
-    CountryCode: 'US'
   };
   let submitted = false;
 
@@ -308,32 +272,38 @@
         >
           <div class="flex flex-col space-y-[1rem] flex-grow">
             <H6>Ship From</H6>
-            <Fieldset legend="Address"><Input bind:value={Shipper.AddressLine} /></Fieldset>
+            <Fieldset legend="Address"><Input bind:value={$quote.Shipper.AddressLine} /></Fieldset>
             <Fieldset legend="ZIP"
               ><Input
                 type="number"
-                bind:value={Shipper.PostalCode}
+                bind:value={$quote.Shipper.PostalCode}
                 on:change={() => zipChangeHandler('shipper')}
               /></Fieldset
             >
-            <Fieldset legend="City"><Input bind:value={Shipper.City} /></Fieldset>
+            <Fieldset legend="City"><Input bind:value={$quote.Shipper.City} /></Fieldset>
             <Fieldset legend="State"
-              ><Select options={stateOptions} bind:value={Shipper.StateProvinceCode} /></Fieldset
+              ><Select
+                options={stateOptions}
+                bind:value={$quote.Shipper.StateProvinceCode}
+              /></Fieldset
             >
           </div>
           <div class="flex flex-col space-y-[1rem] flex-grow">
             <H6>Ship To</H6>
-            <Fieldset legend="Address"><Input bind:value={ShipTo.AddressLine} /></Fieldset>
+            <Fieldset legend="Address"><Input bind:value={$quote.ShipTo.AddressLine} /></Fieldset>
             <Fieldset legend="ZIP"
               ><Input
                 type="number"
-                bind:value={ShipTo.PostalCode}
+                bind:value={$quote.ShipTo.PostalCode}
                 on:change={() => zipChangeHandler('shipTo')}
               /></Fieldset
             >
-            <Fieldset legend="City"><Input bind:value={ShipTo.City} /></Fieldset>
+            <Fieldset legend="City"><Input bind:value={$quote.ShipTo.City} /></Fieldset>
             <Fieldset legend="State"
-              ><Select options={stateOptions} bind:value={ShipTo.StateProvinceCode} /></Fieldset
+              ><Select
+                options={stateOptions}
+                bind:value={$quote.ShipTo.StateProvinceCode}
+              /></Fieldset
             >
           </div>
           <div class="flex flex-col space-y-[1rem] flex-grow">
@@ -342,11 +312,15 @@
               ><Input
                 class="text-right"
                 type="number"
-                bind:value={PackageInfo.Packages}
+                bind:value={$quote.PackageInfo.Packages}
               /></Fieldset
             >
             <Fieldset legend="Total Weight"
-              ><Input class="text-right" type="number" bind:value={PackageInfo.Weight} /></Fieldset
+              ><Input
+                class="text-right"
+                type="number"
+                bind:value={$quote.PackageInfo.Weight}
+              /></Fieldset
             >
           </div>
         </div>
