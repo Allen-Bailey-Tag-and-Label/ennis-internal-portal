@@ -1,14 +1,14 @@
 <script>
   // imports
   import { goto } from '$app/navigation';
-  import { quote } from '@stores';
+  import { quote as quoteStore } from '@stores';
 
   // components
   import { A, Button, H3, H6, Main, P, SafeArea, Table, Tbody, Td, Tr } from '@components';
 
   // handlers
   const duplicateClickHandler = () => {
-    $quote = {
+    $quoteStore = {
       PackageInfo: packageInfo,
       Shipper: shipper,
       ShipTo: shipTo
@@ -22,7 +22,7 @@
   export let classification = '';
   export let date = '';
   export let packageInfo = {};
-  export let quoteNumber = 0;
+  export let quote = 0;
   export let rates = [];
   export let shipper = {};
   export let shipTo = {};
@@ -45,9 +45,7 @@
   <SafeArea class="overflow-y-auto">
     <div class="flex flex-grow items-center justify-center">
       <div class="flex flex-col space-y-[1rem]">
-        <H3 class="text-[1rem] leading-[1rem] lg:text-[3rem] lg:leading-[3rem]"
-          >Quote #{quoteNumber}</H3
-        >
+        <H3 class="text-[1rem] leading-[1rem] lg:text-[3rem] lg:leading-[3rem]">Quote #{quote}</H3>
         <div class="grid grid-cols-[fit-content(200px)_1fr] gap-[.5rem]">
           <P><b>Date:</b></P>
           <P>{new Date(date).toLocaleDateString()} {new Date(date).toLocaleTimeString()}</P>
