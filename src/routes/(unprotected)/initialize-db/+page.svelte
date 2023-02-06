@@ -2,6 +2,7 @@
     import {theme} from 'sveltewind/stores';
     import { enhance } from '$app/forms';
   import { Button, Fieldset, Form, Input } from '$components';
+  import RouteTitle from '../RouteTitle.svelte'
 
   // types
   type Form = {
@@ -87,11 +88,7 @@
   export let form: Form;
 </script>
 
-<div
-  class="flex flex-grow flex-col overflow-hidden items-center justify-center p-[1rem] min-h-full"
->
-  <div class="max-w-[375px] w-full flex flex-col flex-grow px-[1px] space-y-[2rem] overflow-hidden lg:flex-grow-0">
-    <div class="text-[1.5rem] font-semibold">Initialize DB</div>
+  <RouteTitle>Initialize DB</RouteTitle>
     {#if !form?.success}
     <Form class="w-full space-y-[2rem] flex-grow overflow-hidden" use={[enhance]}>
         <div class="flex flex-col flex-grow overflow-auto p-[1px]">
@@ -137,5 +134,3 @@
             <a class={$theme.button} href="/sign-in">Sign In</a>
         </div>
     {/if}
-  </div>
-</div>

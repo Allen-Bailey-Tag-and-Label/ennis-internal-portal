@@ -1,7 +1,6 @@
 import crypto from 'crypto-js';
 import * as db from '$db';
 import type { Actions } from './$types';
-import { redirect } from '@sveltejs/kit';
 
 type DefaultRoute = {
   group?: string;
