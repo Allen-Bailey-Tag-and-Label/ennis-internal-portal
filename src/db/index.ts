@@ -20,7 +20,7 @@ const insertOne = async ({ collection, doc }: InsertProp) => {
   await connect();
 
   // create doc
-  const createdDoc = await client
+  const { value: createdDoc } = await client
     .db()
     .collection(collection)
     .findOneAndUpdate(doc, { $set: {} }, { upsert: true, returnDocument: 'after' });
