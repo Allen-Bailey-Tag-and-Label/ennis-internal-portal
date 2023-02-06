@@ -18,6 +18,8 @@ type User = {
   username: string;
   password: string;
   roles: string[];
+  isActive: boolean;
+  redirectSignIn: string;
 };
 
 const defaultRoutes: DefaultRoute[] = [
@@ -50,6 +52,12 @@ export const actions = {
 
     // add roles
     user.roles = [_adminRoleId];
+
+    // update user isActive status
+    user.isActive = true;
+
+    // update user isActive status
+    user.redirectSignIn = '/dashboard';
 
     // create user
     await db.insertOne({ collection: 'users', doc: user });

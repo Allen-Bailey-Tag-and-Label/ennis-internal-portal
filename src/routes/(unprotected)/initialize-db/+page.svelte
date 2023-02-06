@@ -57,7 +57,7 @@
     {
       fields: [
         { legend: 'Ennis ID', name: 'ennisId', type: 'number', required: true, value: '' },
-        { legend: 'Hire Date', name: 'hiredAt', type: 'date', required: true, value: '' },
+        { legend: 'Hire Date', name: 'hireDate', type: 'date', required: true, value: '' },
         { legend: 'Title', name: 'title', value: '' }
       ],
       text: 'Ennis Information'
