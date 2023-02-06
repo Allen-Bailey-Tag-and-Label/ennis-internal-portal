@@ -35,46 +35,42 @@
   let step = 0;
   const steps: Step = [
     {
-        
       fields: [
         {
           changeHandler: updateUsername,
           legend: 'First Name',
           name: 'firstName',
           required: true,
-          value: 'Bob'
+          value: ''
         },
         {
           changeHandler: updateUsername,
           legend: 'Last Name',
           name: 'lastName',
           required: true,
-          value: 'McAleavey'
+          value: ''
         }
       ],
       text: 'Personal Information'
     },
     {
-        
       fields: [
-        { legend: 'Ennis ID', name: 'ennisId', type: 'number', required: true, value: '156070' },
-        { legend: 'Hire Date', name: 'hiredAt', type: 'date', required: true, value: '2004-06-04' },
-        { legend: 'Title', name: 'title', value: 'General Manager' }
+        { legend: 'Ennis ID', name: 'ennisId', type: 'number', required: true, value: '' },
+        { legend: 'Hire Date', name: 'hiredAt', type: 'date', required: true, value: '' },
+        { legend: 'Title', name: 'title', value: '' }
       ],
       text: 'Ennis Information'
     },
     {
-        
       fields: [
-        { legend: 'Email', name: 'email', type: 'email', value: 'bob_mcaleavey@ennis.com' },
-        { legend: 'Extension', name: 'extension', type: 'number', value: '1019' }
+        { legend: 'Email', name: 'email', type: 'email', value: '' },
+        { legend: 'Phone Extension', name: 'phoneExtension', type: 'number', value: '' }
       ],
       text: 'Contact Information'
     },
     {
-        
       fields: [
-        { legend: 'Username', name: 'username', required: true, value: 'bmcaleavey' },
+        { legend: 'Username', name: 'username', required: true, value: '' },
         {
           legend: 'Password',
           name: 'password',
@@ -86,56 +82,6 @@
       text: 'Login Information'
     }
   ];
-//   let step = 0;
-//   const steps: Step = [
-//     {
-//       fields: [
-//         {
-//           changeHandler: updateUsername,
-//           legend: 'First Name',
-//           name: 'firstName',
-//           required: true,
-//           value: ''
-//         },
-//         {
-//           changeHandler: updateUsername,
-//           legend: 'Last Name',
-//           name: 'lastName',
-//           required: true,
-//           value: ''
-//         }
-//       ],
-//       text: 'Personal Information'
-//     },
-//     {
-//       fields: [
-//         { legend: 'Ennis ID', name: 'ennisId', type: 'number', required: true, value: '' },
-//         { legend: 'Hire Date', name: 'hiredAt', type: 'date', required: true, value: '' },
-//         { legend: 'Title', name: 'title', value: '' }
-//       ],
-//       text: 'Ennis Information'
-//     },
-//     {
-//       fields: [
-//         { legend: 'Email', name: 'email', type: 'email', value: '' },
-//         { legend: 'Extension', name: 'extension', type: 'number', value: '' }
-//       ],
-//       text: 'Contact Information'
-//     },
-//     {
-//       fields: [
-//         { legend: 'Username', name: 'username', required: true, value: '' },
-//         {
-//           legend: 'Password',
-//           name: 'password',
-//           type: 'password',
-//           required: true,
-//           value: 'ABTL1234$'
-//         }
-//       ],
-//       text: 'Login Information'
-//     }
-//   ];
 
   // props (external)
   export let form: Form;
