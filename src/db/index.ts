@@ -1,8 +1,16 @@
 import { MongoClient } from 'mongodb';
-import { MONGO_DB, MONGO_PASSWORD, MONGO_URI } from '$env/static/private';
+import { MONGO_DB, MONGO_MAX_POOL_SIZE, MONGO_PASSWORD, MONGO_URI } from '$env/static/private';
 
 const client = new MongoClient(
-  MONGO_URI.replace('?retryWrites', `${MONGO_DB}?retryWrites`).replace('<password>', MONGO_PASSWORD)
+  MONGO_URI.replace('?retryWrites', `${MONGO_DB}?retryWrites`).replace(
+    '<password>',
+    MONGO_PASSWORD
+  ),
+  {
+    maxPoolSize: +MONGO_MAX_POOL_SIZE,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
 );
 let connection: MongoClient | undefined;
 
