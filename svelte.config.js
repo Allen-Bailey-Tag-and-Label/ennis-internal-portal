@@ -17,6 +17,7 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
+      $actions: resolve('./src/actions'),
       $auth: resolve('./src/auth'),
       $components: resolve('./src/components'),
       $db: resolve('./src/db'),
