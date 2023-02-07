@@ -5,19 +5,20 @@
   import '../app.postcss';
 
   // common classes
-  const cardShadow = 'shadow dark:shadow-[0_1px_3px_rgba(0,0,0,1)]';
+  const cardShadow = 'shadow dark:shadow-[0_.5rem_1rem_rgba(0,0,0,.5)]';
 
   theme.set({
     button:
       'cursor-pointer bg-primary-500 hover:bg-primary-600 focus:bg-primary-600 focus:ring-primary-600/[.3]',
     card: `${cardShadow}`,
+    form: 'max-w-[375px] w-full',
     h1: 'font-semibold text-[2.5rem]',
     h2: 'font-semibold text-[2rem]',
     header: 'bg-primary-500 text-white',
     input:
       'bg-transparent dark:bg-transparent hover:ring-offset-primary-500 focus:ring-offset-primary-500 focus:ring-primary-500/[.3]',
-    main: 'flex relative flex-grow overflow-hidden pt-[max(1rem,_env(safe-area-inset-top))] pl-[max(1rem,_env(safe-area-inset-left))] pr-[max(1rem,_env(safe-area-inset-right))] pb-[1rem] lg:flex-col',
-    nav: `${cardShadow} space-y-[2rem] justify-between transition duration-200 fixed top-0 right-0 w-[calc(100%_-_4rem)] min-h-screen max-h-screen bg-primary-500 z-[2] pt-[max(1rem,_env(safe-area-inset-top))] pb-[max(1rem,_env(safe-area-inset-bottom))] lg:right-auto lg:left-0 lg:w-[auto] lg:pt-[2.5rem]`,
+    main: 'transition duration-200 flex relative flex-grow overflow-hidden pt-[max(1rem,_env(safe-area-inset-top))] pl-[max(1rem,_env(safe-area-inset-left))] pr-[max(1rem,_env(safe-area-inset-right))] pb-[1rem] lg:flex-col',
+    nav: `${cardShadow} space-y-[2rem] justify-between transition duration-200 fixed top-0 right-0 w-[calc(100%_-_4rem)] min-h-screen max-h-screen bg-primary-500 z-[2] pt-[max(1rem,_env(safe-area-inset-top))] pb-[max(1rem,_env(safe-area-inset-bottom))] lg:right-auto lg:left-0 lg:w-[auto] lg:pt-[3.5rem]`,
     overlay: 'h-screen z-[2] transition duration-200 cursor-pointer'
   });
   $: title = [
