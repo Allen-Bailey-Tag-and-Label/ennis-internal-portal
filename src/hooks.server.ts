@@ -1,46 +1,70 @@
 import type { Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
-import jwt from 'jsonwebtoken';
 import { verifyAuthToken } from '$auth';
 import * as db from '$db';
-import { JWT_SECRET } from '$env/static/private';
-import { protectedRoutes } from '$routes';
 
-// const protectedRoutesHandle: Handle = async ({ event, resolve }) => {
-//   // initialize protected routes
-//   const routes = protectedRoutes.map(({ href }: { href: string }) => href);
+const protectedRoutesHandle: Handle = async ({ event, resolve }) => {
+  // find all available roles and routes in db
+  const [roles, routes] = await Promise.all(
+    ['roles', 'routes'].map(async (collection) => await db.find({ collection, query: {} }))
+  );
 
-//   // check if route is protected
-//   if (routes.includes(event.url.pathname)) {
-//     try {
-//       // verify authToken
-//       const user = await verifyAuthToken({ event });
+  // map to just the route name
+  const pathNames = [...routes].map(({ route }) => route);
 
-//       // confirm user is active
-//       if (!user.isActive) throw 'User is not active';
+  // check if route is protected
+  if (pathNames.includes(event.url.pathname)) {
+    try {
+      // verify authToken
+      const user = await verifyAuthToken({ event });
 
-//       // set user locals
-//       event.locals.user = user;
-//     } catch (error) {
-//       console.log({ error });
+      // set user locals
+      event.locals.user = user;
 
-//       // delete authToken cookie
-//       event.cookies.set('authToken', '', {
-//         path: '/',
-//         sameSite: 'strict',
-//         secure: process.env.NODE_ENV === 'production',
-//         maxAge: -3600
-//       });
+      // get all user routes
+      const userRoutes = [
+        ...new Set(...roles.map((role: { routes: string[] }) => role.routes))
+      ].map((_routeId) => routes.find((route: { _id: string }) => route._id === _routeId));
 
-//       // redirect to sign-in route if invalid authToken
-//       return Response.redirect(`${event.url.origin}/sign-in`, 301);
-//     }
-//   }
+      // get user navigation
+      let navigation = userRoutes.reduce((obj, route) => {
+        // check if group is in obj
+        if (!(route?.group in obj)) obj[route?.group] = [];
 
-//   const response = await resolve(event);
+        // add route to group
+        obj[route?.group] = [...obj[route?.group], { name: route.name, route: route.route }];
 
-//   return response;
-// };
+        return obj;
+      }, {});
+
+      // sort user navigation
+      navigation = Object.keys(navigation).reduce((obj, key) => {
+        obj[key] = navigation[key].sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
+        return obj;
+      }, {});
+
+      // update user local navigation
+      event.locals.user.navigation = navigation;
+    } catch (error) {
+      console.log({ error });
+
+      // delete authToken cookie
+      event.cookies.set('authToken', '', {
+        path: '/',
+        sameSite: 'strict',
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: -3600
+      });
+
+      // redirect to sign-in route if invalid authToken
+      return Response.redirect(`${event.url.origin}/sign-in`, 301);
+    }
+  }
+
+  const response = await resolve(event);
+
+  return response;
+};
 
 const rootRouteHandle: Handle = async ({ event, resolve }) => {
   // get authToken cookie
@@ -72,5 +96,5 @@ const rootRouteHandle: Handle = async ({ event, resolve }) => {
   return response;
 };
 
-// export const handle = sequence(rootRouteHandle, protectedRoutesHandle);
-export const handle = sequence(rootRouteHandle);
+export const handle = sequence(rootRouteHandle, protectedRoutesHandle);
+// export const handle = sequence(rootRouteHandle);

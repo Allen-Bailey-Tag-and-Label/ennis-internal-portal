@@ -25,11 +25,19 @@ type User = {
 const defaultRoutes: DefaultRoute[] = [
   { name: 'Dashboard', route: '/dashboard' },
   { group: 'Admin', name: 'Routes', route: '/admin/routes' },
-  { group: 'Admin', name: 'Roles', route: '/admin/roles' }
+  { group: 'Admin', name: 'Roles', route: '/admin/roles' },
+  { group: 'My Account', name: 'Change Password', route: '/my-account/change-password' }
 ];
 
 export const actions = {
   default: async ({ request }) => {
+    // delete all existing docs from all collections
+    await Promise.all(
+      ['roles', 'routes', 'users'].map(async (collection) => {
+        await db.deleteMany({ collection, query: {} });
+      })
+    );
+
     // get submitted data
     const user: User = Object.fromEntries(await request.formData());
 
