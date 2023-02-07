@@ -1,7 +1,7 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
-  import { Button, Fieldset, Form, Input } from '$components';
-  import RouteTitle from '../RouteTitle.svelte';
+  import { Button, Fieldset, Form, Input, PasswordInput, RouteTitle } from '$components';
+  // import RouteTitle from '../RouteTitle.svelte';
 
   // types
   type Form = {
@@ -13,12 +13,20 @@
   const fields = [
     {
       changeHandler: () => (fields[0].value = fields[0].value.toLowerCase().trim()),
+      component: Input,
       legend: 'Username',
       name: 'username',
       required: true,
       value: ''
     },
-    { legend: 'Password', name: 'password', required: true, type: 'password', value: '' }
+    {
+      component: PasswordInput,
+      legend: 'Password',
+      name: 'password',
+      required: true,
+      type: 'password',
+      value: ''
+    }
   ];
 
   // props (external)
@@ -33,9 +41,16 @@
     {/if}
   </div>
   <div class="flex flex-col overflow-auto space-y-[1rem] p-[1px]">
-    {#each fields as { changeHandler = undefined, legend, name, required = undefined, type = undefined, value }}
+    {#each fields as { changeHandler = undefined, component, legend, name, required = undefined, type = undefined, value }}
       <Fieldset {legend}>
-        <Input bind:value {name} on:change={changeHandler} {required} {type} />
+        <svelte:component
+          this={component}
+          bind:value
+          {name}
+          on:change={changeHandler}
+          {required}
+          {type}
+        />
       </Fieldset>
     {/each}
   </div>
