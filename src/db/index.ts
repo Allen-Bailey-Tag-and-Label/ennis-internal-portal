@@ -15,6 +15,14 @@ type InsertProp = {
   doc: object;
 };
 
+const deleteMany = async ({ collection, query = {} }: { collection: string; query: object }) => {
+  // await connection
+  await connect();
+
+  // delete docs
+  await client.db().collection(collection).deleteMany(query);
+};
+
 const insertOne = async ({ collection, doc }: InsertProp) => {
   // await connection
   await connect();
@@ -72,4 +80,4 @@ const findOneAndUpdate = async ({ collection, query, update }: FindOneAndUpdateP
   return JSON.parse(JSON.stringify(doc));
 };
 
-export { insertOne, find, findOne, findOneAndUpdate };
+export { deleteMany, insertOne, find, findOne, findOneAndUpdate };
