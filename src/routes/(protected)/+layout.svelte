@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Button, Form, Icon, Header, Main, Nav, Overlay } from '$components';
+  import { page } from '$app/stores';
+  import { Button, Form, Icon, Header, Main, Nav, Overlay, RouteTitle } from '$components';
   import { MenuAlt4, X } from '$icons';
   import type { LayoutData } from './$types';
 
@@ -8,16 +9,26 @@
   const toggleNav = () => (isNavOpen = !isNavOpen);
 
   // props (internal)
+  let layoutWidth = 0;
+  let navWidth = 0;
   let isNavOpen = false;
 
   // props (external)
   export let data: LayoutData;
+
+  // props (dynamic)
+  $: flatNavigation = Object.keys(data.user.navigation)
+    .map((key) => data.user.navigation[key])
+    .flat();
+  $: currentRoute = flatNavigation.find((item) => item.route === $page.url.pathname) || {
+    name: ''
+  };
 </script>
 
-<div class="flex flex-col flex-grow overflow-hidden lg:flex-row-reverse">
-  <Main>
-    <slot {data} />
-  </Main>
+<div
+  bind:clientWidth={layoutWidth}
+  class="flex flex-col-reverse flex-grow overflow-hidden lg:flex-row"
+>
   <Header>
     <Button
       class="px-[.5rem] bg-transparent hover:bg-primary-600 focus:bg-primary-600 focus:ring-primary-600/[.3] z-[3]"
@@ -34,7 +45,7 @@
         ? 'translate-x-full shadow-none dark:shadow-none lg:-translate-x-full'
         : 'translate-x-0'}
     >
-      <div class="flex flex-col space-y-[2rem]">
+      <div bind:clientWidth={navWidth} class="flex flex-col space-y-[2rem]">
         {#each Object.keys(data.user.navigation) as group}
           <div class="flex flex-col">
             {#if group !== ''}
@@ -54,8 +65,20 @@
         {/each}
       </div>
       <Form action="/sign-out">
-        <Button class="justify-start px-[1rem] py-[.5rem]" type="submit">Sign Out</Button>
+        <Button class="justify-start px-[1rem] py-[.5rem]" on:focus={showNav} type="submit"
+          >Sign Out</Button
+        >
       </Form>
     </Nav>
   </Header>
+  <Main
+    style="transform: translateX({!isNavOpen
+      ? 0
+      : layoutWidth < 1024
+      ? -navWidth
+      : navWidth - 40}px)"
+  >
+    <RouteTitle>{currentRoute.name}</RouteTitle>
+    <slot {data} />
+  </Main>
 </div>
