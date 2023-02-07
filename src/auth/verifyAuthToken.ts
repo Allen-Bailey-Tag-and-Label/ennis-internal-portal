@@ -27,7 +27,6 @@ export const verifyAuthToken: Handle = async ({ event }) => {
 
   // set auth cookie token
   event.cookies.set('authToken', authToken, {
-    path: '/',
     sameSite: 'strict',
     secure: process.env.NODE_ENV === 'production',
     maxAge: 60 * 60 * 24 * 7

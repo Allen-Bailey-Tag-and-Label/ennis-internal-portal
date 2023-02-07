@@ -50,7 +50,6 @@ const protectedRoutesHandle: Handle = async ({ event, resolve }) => {
 
       // delete authToken cookie
       event.cookies.set('authToken', '', {
-        path: '/',
         sameSite: 'strict',
         secure: process.env.NODE_ENV === 'production',
         maxAge: -3600

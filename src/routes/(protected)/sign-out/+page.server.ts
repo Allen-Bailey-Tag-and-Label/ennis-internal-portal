@@ -5,7 +5,6 @@ export const actions = {
   default: async ({ cookies }) => {
     // remove auth token
     cookies.set('authToken', '', {
-      path: '/',
       sameSite: 'strict',
       secure: process.env.NODE_ENV === 'production',
       maxAge: 1
