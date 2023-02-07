@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Icon, Header, Main, Nav, Overlay } from '$components';
+  import { Button, Form, Icon, Header, Main, Nav, Overlay } from '$components';
   import { MenuAlt4, X } from '$icons';
   import type { LayoutData } from './$types';
 
@@ -12,8 +12,6 @@
 
   // props (external)
   export let data: LayoutData;
-
-  $: console.log(data);
 </script>
 
 <div class="flex flex-col flex-grow overflow-hidden lg:flex-row-reverse">
@@ -22,7 +20,7 @@
   </Main>
   <Header>
     <Button
-      class="px-[.5rem] bg-transparent hover:bg-white/[.1] focus:bg-white/[.1] focus:ring-white/[.3] z-[3]"
+      class="px-[.5rem] bg-transparent hover:bg-primary-600 focus:bg-primary-600 focus:ring-primary-600/[.3] z-[3]"
       on:click={toggleNav}
     >
       <Icon src={!isNavOpen ? MenuAlt4 : X} />
@@ -44,7 +42,7 @@
             {/if}
             {#each data.user.navigation[group] as { name, route }}
               <a
-                class="px-[1rem] py-[.5rem] lg:min-w-[375px] outline-none transition duration-200 ring ring-transparent hover:bg-white/[.1] focus:bg-white/[.1] focus:ring-white/[.3]"
+                class="px-[1rem] py-[.5rem] lg:min-w-[375px] outline-none transition duration-200 ring ring-transparent hover:bg-primary-600 focus:bg-primary-600 focus:ring-primary-600/[.3]"
                 href={route}
                 on:focus={showNav}
               >
@@ -54,6 +52,9 @@
           </div>
         {/each}
       </div>
+      <Form action="/sign-out">
+        <Button class="justify-start px-[1rem] py-[.5rem]" type="submit">Sign Out</Button>
+      </Form>
     </Nav>
   </Header>
 </div>
