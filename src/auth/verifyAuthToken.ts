@@ -16,6 +16,9 @@ export const verifyAuthToken: Handle = async ({ event }) => {
   // check if no username found
   if (user === undefined) throw 'User not in database';
 
+  // check if user is not active
+  if (!user.isActive) throw 'User is not active';
+
   // delete password from user
   delete user.password;
 
