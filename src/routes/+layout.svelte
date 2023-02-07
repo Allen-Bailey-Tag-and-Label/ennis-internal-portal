@@ -19,7 +19,10 @@
       'bg-transparent dark:bg-transparent hover:ring-offset-primary-500 focus:ring-offset-primary-500 focus:ring-primary-500/[.3]',
     main: 'transition duration-200 flex relative flex-grow overflow-hidden pt-0 pl-[max(1rem,_env(safe-area-inset-left))] pr-[max(1rem,_env(safe-area-inset-right))] pb-[1rem] lg:flex-col',
     nav: `${cardShadow} space-y-[2rem] justify-between transition duration-200 fixed top-0 right-0 w-[calc(100%_-_4rem)] min-h-screen max-h-screen bg-primary-500 z-[2] pt-[max(1rem,_env(safe-area-inset-top))] pb-[max(1rem,_env(safe-area-inset-bottom))] lg:right-auto lg:left-0 lg:w-[auto] lg:pt-[3.5rem]`,
-    overlay: 'h-screen z-[2] transition duration-200 cursor-pointer'
+    overlay: 'h-screen z-[2] transition duration-200 cursor-pointer',
+    table: 'bg-transparent dark:bg-transparent',
+    th: 'sticky top-0 transition duration-200 bg-primary-500 hover:bg-primary-600 text-white border-b-0 shadow-[inset_0_-1px_0_rgba(255,255,255,.3)] cursor-pointer',
+    tr: 'transition duration-200 odd:bg-black/[.05] dark:odd:bg-white/[.05] hover:bg-primary-500/[.15] odd:hover:bg-primary-500/[.1] dark:hover:bg-primary-500/[.1] dark:odd:hover:bg-primary-500/[.15]'
   });
   $: title = [
     ...$page.url.pathname
@@ -63,8 +66,14 @@
     height: 0.5rem;
     width: 0.5rem;
   }
+  :global(::-webkit-scrollbar-corner) {
+    background: rgba(49, 56, 185, 0.1);
+  }
   :global(::-webkit-scrollbar-thumb) {
     background: rgb(49, 56, 185);
     border-radius: 0.5rem;
+  }
+  :global(::-webkit-scrollbar-track) {
+    background: rgba(49, 56, 185, 0.1);
   }
 </style>
