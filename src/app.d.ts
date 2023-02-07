@@ -13,10 +13,16 @@ declare global {
         email: string;
         extension: string;
         username: string;
-        password: string;
+        password?: string;
         roles: string[];
         isActive: boolean;
         redirectSignIn: string;
+        navigation: {
+          [key: string]: {
+            name: string;
+            route: string;
+          }[];
+        };
       };
     }
     // interface PageData {}
