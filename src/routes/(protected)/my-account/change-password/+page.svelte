@@ -21,7 +21,7 @@
     <div class="text-green-500">Successfully updated password</div>
   {/if}
 </div>
-<Form use={[enhance]}>
+<Form class="overflow-auto px-[1px]" use={[enhance]}>
   <Input name="username" type="hidden" value={data.user.username} />
   <Fieldset legend="Current Password">
     <PasswordInput bind:value={currentPassword} name="currentPassword" required="true" />
