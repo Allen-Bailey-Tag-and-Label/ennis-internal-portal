@@ -16,7 +16,7 @@
     header: 'bg-primary-500 text-white',
     input:
       'bg-transparent dark:bg-transparent hover:ring-offset-primary-500 focus:ring-offset-primary-500 focus:ring-primary-500/[.3]',
-    main: 'flex relative flex-grow overflow-hidden lg:flex-col',
+    main: 'flex relative flex-grow overflow-hidden pt-[max(1rem,_env(safe-area-inset-top))] pl-[max(1rem,_env(safe-area-inset-left))] pr-[max(1rem,_env(safe-area-inset-right))] pb-[1rem] lg:flex-col',
     nav: `${cardShadow} space-y-[2rem] justify-between transition duration-200 fixed top-0 right-0 w-[calc(100%_-_4rem)] min-h-screen max-h-screen bg-primary-500 z-[2] pt-[max(1rem,_env(safe-area-inset-top))] pb-[max(1rem,_env(safe-area-inset-bottom))] lg:right-auto lg:left-0 lg:w-[auto] lg:pt-[2.5rem]`,
     overlay: 'h-screen z-[2] transition duration-200 cursor-pointer'
   });

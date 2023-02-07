@@ -8,7 +8,7 @@
   const toggleNav = () => (isNavOpen = !isNavOpen);
 
   // props (internal)
-  let isNavOpen = true;
+  let isNavOpen = false;
 
   // props (external)
   export let data: LayoutData;
@@ -44,6 +44,7 @@
               <a
                 class="px-[1rem] py-[.5rem] lg:min-w-[375px] outline-none transition duration-200 ring ring-transparent hover:bg-primary-600 focus:bg-primary-600 focus:ring-primary-600/[.3]"
                 href={route}
+                on:click={toggleNav}
                 on:focus={showNav}
               >
                 {name}
