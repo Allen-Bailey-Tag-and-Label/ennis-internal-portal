@@ -1,8 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import { Card, Checkbox, Icon, Input, Table, Tbody, Td, Th, Thead, Tr } from '$components';
+  import { Card, Checkbox, Icon, Input, Table, Tbody, Th, Thead, Tr } from '$components';
   import { ChevronDown } from '$icons';
+  import Td from './Td.svelte';
 
   // handlers
   const thClickHandler = ({ key }: { key: string }) => {
@@ -13,18 +14,19 @@
   };
 
   // utilities
-  const tdClasses = ({ classes, type }) =>
+  const tdClasses = ({ classes, type }: { classes: string; type: string }) =>
     twMerge(
       type === 'checkbox' ? 'py-[.375rem]' : '',
       type === 'input' ? 'px-0 py-0 ring-0' : '',
       classes
     );
-  const thClasses = ({ classes, key, type }) => twMerge('pr-[3.5rem]', classes);
+  const thClasses = ({ classes, key, type }: { classes: string; key: string; type: string }) =>
+    twMerge('pr-[3.5rem]', classes);
 
   // props (external)
   export let columns: {
     checked?: boolean;
-    changeHandler?: Function;
+    changeHandler?: ((e: CustomEvent<any>) => void) | null | undefined;
     classes?: string;
     editable?: boolean;
     key: string;
@@ -103,18 +105,7 @@
       {#each rows as row}
         <Tr>
           {#each columns as { key, type = "string" }}
-            <Td class={tdClasses({ classes: row?.classes, type })}>
-              {#if type === 'checkbox'}
-                <Checkbox bind:checked={row[key]} on:change={row?.changeHandler} />
-              {:else if type === 'input'}
-                <Input
-                  class="w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1]"
-                  bind:value={row[key]}
-                />
-              {:else if type === 'string'}
-                {row[key]}
-              {/if}
-            </Td>
+            <Td {...row} bind:value={row[key]} {type} />
           {/each}
         </Tr>
       {/each}
