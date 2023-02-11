@@ -1,13 +1,13 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { ResponsiveTable } from '$components';
+  import { DataTable } from '$components';
   import type { PageData } from './$types';
 
   // props (internal)
-  const columns = [
-    { key: 'group', th: 'Group' },
-    { key: 'name', th: 'Name' },
-    { key: 'route', th: 'Route' }
+  let columns = [
+    { classes: 'w-[5rem]', key: 'group', th: 'Group' },
+    { classes: 'w-[5rem]', key: 'name', th: 'Name' },
+    { classes: 'w-[5rem]', key: 'route', th: 'Route' }
   ];
   let rows: Rows = [];
 
@@ -36,6 +36,6 @@
   });
 </script>
 
-<div class="flex flex-col flex-grow overflow-auto">
-  <ResponsiveTable {columns} {rows} />
+<div class="flex flex-col flex-grow overflow-auto p-[1px]">
+  <DataTable bind:columns bind:rows />
 </div>

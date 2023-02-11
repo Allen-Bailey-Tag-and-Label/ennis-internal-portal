@@ -36,6 +36,7 @@ export const actions = {
 
     // set auth cookie token
     cookies.set('authToken', authToken, {
+      path: '/',
       sameSite: 'strict',
       secure: process.env.NODE_ENV === 'production',
       maxAge: 60 * 60 * 24 * 7

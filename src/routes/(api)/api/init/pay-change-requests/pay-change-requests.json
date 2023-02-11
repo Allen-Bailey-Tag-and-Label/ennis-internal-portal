@@ -1,0 +1,2891 @@
+[{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620156a"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ad2"
+  },
+  "costCenter": "2046108",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18,
+    "code": "301",
+    "date": 1553472000000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Improvements to quality. Highly dependable production rates. More in line with rest of dept. Valued employee. Has continued steady progress",
+    "previous": 17.48,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Charles Carson",
+  "Ennis ID": "197537"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201585"
+  },
+  "userId": {
+    "$oid": "6140942c36b17e6114a66acc"
+  },
+  "costCenter": "2046901",
+  "jobCode": "325060",
+  "jobTitle": "Invoicing Clerk",
+  "eeoClassification": "005",
+  "workCompClass": "8810",
+  "change": {
+    "after": 18.91,
+    "code": "310",
+    "date": 1553990400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review",
+    "previous": 18.54,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Kathleen Williams",
+  "Ennis ID": "197604"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201590"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae3"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.27,
+    "code": "005",
+    "date": 1589760000000,
+    "description": "Shift Change",
+    "exempt": false,
+    "explanation": "Remove shift differential from base wage",
+    "previous": 13.77,
+    "percent": -3.6
+  },
+  "status": "Approved",
+  "Employee": "Penny Hogan",
+  "Ennis ID": "197553"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201591"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ad1"
+  },
+  "costCenter": "2046631",
+  "jobCode": "32727",
+  "jobTitle": "Shipping Clerk",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 16.18,
+    "code": "301",
+    "date": 1620604800000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Phil will be expanding his role to lead shipper in Bldg 2",
+    "previous": 15.41,
+    "percent": 5
+  },
+  "status": "Approved",
+  "Employee": "Philip Carlson",
+  "Ennis ID": "197536"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201570"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad6"
+  },
+  "costCenter": "2046613",
+  "jobCode": "32901",
+  "jobTitle": "Janitor",
+  "eeoClassification": "009",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.84,
+    "code": "310",
+    "date": 1630800000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Additional job duties of cutting grass at ABTL & SPF",
+    "previous": 14.34,
+    "percent": 3.5
+  },
+  "status": "Approved",
+  "Employee": "David Davis",
+  "Ennis ID": "197543"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620159c"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af1"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17,
+    "code": "002",
+    "date": 1627862400000,
+    "description": "Rehire",
+    "exempt": false,
+    "explanation": "Rehire",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "Thomas Livermore",
+  "Ennis ID": "156059"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620157e"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66acf"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 21.63,
+    "code": "002",
+    "date": 1579046400000,
+    "description": "Rehire",
+    "exempt": false,
+    "explanation": "Rehire",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "Jodi Bessel",
+  "Ennis ID": "197618"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201580"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ade"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 17,
+    "code": "001",
+    "date": 1557964800000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "New hire",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "John Formella",
+  "Ennis ID": "156117"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620158e"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af3"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 12.5,
+    "code": "008",
+    "date": 1609027200000,
+    "description": "Payroll Adjustment",
+    "exempt": false,
+    "explanation": "NYS Minimum Wage  increase",
+    "previous": 12.44,
+    "percent": 0.5
+  },
+  "status": "Approved",
+  "Employee": "Nicole Martino",
+  "Ennis ID": "197575"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201598"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae5"
+  },
+  "costCenter": "2046013",
+  "jobCode": "32605",
+  "jobTitle": "Press Operator",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.9,
+    "code": "310",
+    "date": 1556409600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review",
+    "previous": 14.61,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Stephen Jones",
+  "Ennis ID": "197560"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620159b"
+  },
+  "userId": {
+    "$oid": "6140948136b17e6114a66b02"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.23,
+    "code": "310",
+    "date": 1621209600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Merit - Overdue. Continues to lead & perform above normal rates",
+    "previous": 14.79,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Tammy Vanelli",
+  "Ennis ID": "197602"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201577"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66aff"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.77,
+    "code": "310",
+    "date": 1621209600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Merit - Eric has caught on very well & is performing up to or above expected rates",
+    "previous": 13.5,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Eric Selfridge",
+  "Ennis ID": "156071"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201567"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aea"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13,
+    "code": "002",
+    "date": 1606089600000,
+    "description": "Rehire",
+    "exempt": false,
+    "explanation": "Rehire for finishing - previously press operator in Acme",
+    "previous": 14,
+    "percent": -7.1
+  },
+  "status": "Approved",
+  "Employee": "Amanda Lane",
+  "Ennis ID": "197565"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201579"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afe"
+  },
+  "costCenter": "2046108",
+  "jobCode": "32605",
+  "jobTitle": "Press Operator",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.05,
+    "code": "310",
+    "date": 1576972800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review",
+    "previous": 13.77,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Jacob Rohn",
+  "Ennis ID": "197593"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201593"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66af9"
+  },
+  "costCenter": "2046631",
+  "jobCode": "32727",
+  "jobTitle": "Shipping Clerk",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14,
+    "code": "001",
+    "date": 1630972800000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "New hire",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "Robert Paduano",
+  "Ennis ID": "197632"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201569"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae8"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 22.59,
+    "code": "310",
+    "date": 1577577600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "CSR/Estimator - Taking on new role as a float between roles - primary role will now be lead CSR for GBS",
+    "previous": 22.15,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Anthony Kozak",
+  "Ennis ID": "197520"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620156c"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af4"
+  },
+  "costCenter": "2046610",
+  "jobCode": "32615",
+  "jobTitle": "Composition Work",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.5,
+    "code": "308",
+    "date": 1625270400000,
+    "description": "Review",
+    "exempt": false,
+    "explanation": "Colin was rehired from 4601 BU and given a 3 month probationary period at which time would receive a $.50 raise if her performed his duties well - which he has done",
+    "previous": 14,
+    "percent": 3.6
+  },
+  "status": "Approved",
+  "Employee": "Colin McAleavey",
+  "Ennis ID": "156118"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201574"
+  },
+  "userId": {
+    "$oid": "6140948136b17e6114a66b03"
+  },
+  "costCenter": "2046901",
+  "jobCode": "32523",
+  "jobTitle": "Pruchasing Clerk",
+  "eeoClassification": "005",
+  "workCompClass": "8810",
+  "change": {
+    "after": 64178.4,
+    "code": "310",
+    "date": 1553990400000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Annual review",
+    "previous": 62920,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Diane Vonglis",
+  "Ennis ID": "197529"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620157d"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad4"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 16.2,
+    "code": "301",
+    "date": 1621209600000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Position upgrade to lead BT operator. Jeremy will troubleshoot for other operators, train new operators, distribute WO's, and verify correct information on WO's. Some mechanical repair when possible.",
+    "previous": 15.58,
+    "percent": 4
+  },
+  "status": "Approved",
+  "Employee": "Jeremy Cornell",
+  "Ennis ID": "197541"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201588"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ad0"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 32.72,
+    "code": "310",
+    "date": 1583020800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Lead estimator, CSR, special projects, Sr Navision resource (Key) - Kim overseas 1 employee, leads all pricing projects & is liaison to other Ennis plants",
+    "previous": 32.11,
+    "percent": 1.9
+  },
+  "status": "Approved",
+  "Employee": "Kimberly Canute",
+  "Ennis ID": "197506"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620156d"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ada"
+  },
+  "costCenter": "2046108",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 22.12,
+    "code": "310",
+    "date": 1621209600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Merit/Retention. Lead 2nd shift. Is exceptional at what he does. Suv concerned about opportunities closer to his home, etc.",
+    "previous": 21.37,
+    "percent": 3.5
+  },
+  "status": "Approved",
+  "Employee": "Dale Ferreira",
+  "Ennis ID": "197546"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620158a"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af5"
+  },
+  "costCenter": "2046601",
+  "jobCode": "32425",
+  "jobTitle": "Material Handler",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.5,
+    "code": "001",
+    "date": 1620604800000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "New hire",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "Logan McLean",
+  "Ennis ID": "197626"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201594"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aec"
+  },
+  "costCenter": "2046631",
+  "jobCode": "32727",
+  "jobTitle": "Shipping Clerk",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.7,
+    "code": "301",
+    "date": 1620000000000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Has shown great progress in 5 months and is expanding his role - Russ will be lead shipper in Bldf. 1",
+    "previous": 14,
+    "percent": 5
+  },
+  "status": "Approved",
+  "Employee": "Russell Lawrence",
+  "Ennis ID": "197625"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201596"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66adb"
+  },
+  "costCenter": "2046301",
+  "jobCode": "12145",
+  "jobTitle": "Production Manager (M) SALARY",
+  "eeoClassification": "010",
+  "workCompClass": "4299",
+  "change": {
+    "after": 67326.86,
+    "code": "304",
+    "date": 1606608000000,
+    "description": "New Responsibilities",
+    "exempt": true,
+    "explanation": "Promoted to Production Manager - 6 month increase",
+    "previous": 65684.14,
+    "percent": 2.5
+  },
+  "status": "Approved",
+  "Employee": "Scott Filio",
+  "Ennis ID": "197511"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201575"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aef"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.31,
+    "code": "310",
+    "date": 1561852800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review",
+    "previous": 16.97,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Dorothy Lingle",
+  "Ennis ID": "197571"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620157a"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afa"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17,
+    "code": "310",
+    "date": 1564272000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Jackie is a valued employee & needs little direction. She is learning new presses & has a keen eye for defects",
+    "previous": 16.65,
+    "percent": 2.1
+  },
+  "status": "Approved",
+  "Employee": "Jacqueline Panipinto",
+  "Ennis ID": "197584"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620158f"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ae1"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.35,
+    "code": "301",
+    "date": 1631404800000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Patty has taken on learning more machines and continues to improve",
+    "previous": 14.91,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Patricia Hart",
+  "Ennis ID": "197551"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201573"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aeb"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 16.6,
+    "code": "301",
+    "date": 1624147200000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Dawn will help run more complicated 3 over 2 press as needed - She does anything to help the company get the work out",
+    "previous": 16.12,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Dawn Lawrence",
+  "Ennis ID": "197567"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201568"
+  },
+  "userId": {
+    "$oid": "613a204ebf5ba54220018067"
+  },
+  "costCenter": "2046901",
+  "jobCode": "31571",
+  "jobTitle": "HR Rep.",
+  "eeoClassification": "005",
+  "workCompClass": "8810",
+  "change": {
+    "after": 17,
+    "code": "304",
+    "date": 1625270400000,
+    "description": "New Responsibilities",
+    "exempt": false,
+    "explanation": "Amy has been vital to ABLT transitioning to JDE & has continued to take on additional tasks/responsibilities such as credit management & accounts receivable functions",
+    "previous": 16,
+    "percent": 6.3
+  },
+  "status": "Approved",
+  "Employee": "Amy McAleavey",
+  "Ennis ID": "156072"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201572"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ae2"
+  },
+  "costCenter": "2046731",
+  "jobCode": "42500",
+  "jobTitle": "Office Clerk PT",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 12.5,
+    "code": "008",
+    "date": 1609027200000,
+    "description": "Payroll Adjustment",
+    "exempt": false,
+    "explanation": "NYS Minimum Wage  increase",
+    "previous": 11.8,
+    "percent": 5.9
+  },
+  "status": "Approved",
+  "Employee": "Dawn Hirsch",
+  "Ennis ID": "197552"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620157b"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad9"
+  },
+  "costCenter": "2046613",
+  "jobCode": "126550",
+  "jobTitle": "Maintenance Supervisor (S)",
+  "eeoClassification": "010",
+  "workCompClass": "4299",
+  "change": {
+    "after": 70034.02,
+    "code": "310",
+    "date": 1631404800000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Vital asset to management. Also oversees safety program",
+    "previous": 68660.8,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "James Fennell",
+  "Ennis ID": "197510"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201582"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae6"
+  },
+  "costCenter": "2046795",
+  "jobCode": "124660",
+  "jobTitle": "Sales Manager (S)",
+  "eeoClassification": "004",
+  "workCompClass": "8742",
+  "change": {
+    "after": 76483.68,
+    "code": "310",
+    "date": 1557014400000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Annual Review",
+    "previous": 74984,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "John Kilcoyne",
+  "Ennis ID": "197518"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620158b"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af6"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 22.66,
+    "code": "310",
+    "date": 1582416000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review - versatile employee, willing to work OT when needed",
+    "previous": 22.29,
+    "percent": 1.7
+  },
+  "status": "Approved",
+  "Employee": "Mark Napier",
+  "Ennis ID": "197579"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620159d"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad8"
+  },
+  "costCenter": "2046613",
+  "jobCode": "32639",
+  "jobTitle": "Maintenance",
+  "eeoClassification": "009",
+  "workCompClass": "4299",
+  "change": {
+    "after": 19,
+    "code": "001",
+    "date": 1625529600000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "New Hire",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "Travis Englert",
+  "Ennis ID": "197630"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201581"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66adf"
+  },
+  "costCenter": "2046108",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 19.25,
+    "code": "310",
+    "date": 1629072000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "",
+    "previous": 18.87,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "John Grieco",
+  "Ennis ID": "197614"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201576"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ae0"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 22.66,
+    "code": "310",
+    "date": 1625270400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual Review - Ed continues to perform well in his role as tag press supervisor",
+    "previous": 22,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Edward Guldenschuh",
+  "Ennis ID": "197550"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201599"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66ae9"
+  },
+  "costCenter": "2046108",
+  "jobCode": "12145",
+  "jobTitle": "Press Operator",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 70670.5,
+    "code": "310",
+    "date": 1553990400000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Annual review",
+    "previous": 69284.8,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Steven Krisanda",
+  "Ennis ID": "197521"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201586"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af7"
+  },
+  "costCenter": "2046109",
+  "jobCode": "12145",
+  "jobTitle": "Press Operator",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 58302.1,
+    "code": "304",
+    "date": 1606608000000,
+    "description": "New Responsibilities",
+    "exempt": true,
+    "explanation": "Added shipping manager & production backup responsibilities",
+    "previous": 56880.1,
+    "percent": 2.5
+  },
+  "status": "Approved",
+  "Employee": "Kenneth Norton",
+  "Ennis ID": "197524"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620159a"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afb"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13,
+    "code": "001",
+    "date": 1623628800000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "New hire",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "Tammy Perrine",
+  "Ennis ID": "197628"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620156b"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af8"
+  },
+  "costCenter": "2046731",
+  "jobCode": "12431",
+  "jobTitle": "Customer Service Rep. (S)",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 50.67,
+    "code": "001",
+    "date": 1525132800000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "Acquisition/New hire",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "Christine O'Brien",
+  "Ennis ID": "197525"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620157f"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad7"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18.25,
+    "code": "301",
+    "date": 1543795200000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Long term employee with great attibutes as review shows. Needs no direction in daily tasks",
+    "previous": 17.77,
+    "percent": 2.7
+  },
+  "status": "Approved",
+  "Employee": "John Dykstra",
+  "Ennis ID": "197544"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620158c"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66add"
+  },
+  "costCenter": "2046601",
+  "jobCode": "32425",
+  "jobTitle": "Material Handler",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14,
+    "code": "301",
+    "date": 1629072000000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Ship help/Warehouse help/ all around help - Miked has done a great job getting organized. He helps wherever is needed and goes beyond material handling",
+    "previous": 13.5,
+    "percent": 3.7
+  },
+  "status": "Approved",
+  "Employee": "Michael Foose",
+  "Ennis ID": "156050"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620156e"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ace"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 16,
+    "code": "304",
+    "date": 1625270400000,
+    "description": "New Responsibilities",
+    "exempt": false,
+    "explanation": "Dan has been moved to a tag press position to utilize his printing experience",
+    "previous": 13.5,
+    "percent": 18.5
+  },
+  "status": "Approved",
+  "Employee": "Daniel Baylor",
+  "Ennis ID": "156035"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201578"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afd"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.86,
+    "code": "310",
+    "date": 1557619200000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review",
+    "previous": 17.51,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Gale Ramsey",
+  "Ennis ID": "197590"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201587"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66b00"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.01,
+    "code": "310",
+    "date": 1576972800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual - Ken has made improvements over past year in set up time. He also volunteers to be a part of our safety committee",
+    "previous": 14.5,
+    "percent": 3.5
+  },
+  "status": "Approved",
+  "Employee": "Kent Smythe",
+  "Ennis ID": "156037"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201589"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae4"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18.89,
+    "code": "310",
+    "date": 1631404800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Laurie is the #1 performer in the dept & willing to help in any way",
+    "previous": 18.34,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Laurie Hungerford",
+  "Ennis ID": "197611"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201571"
+  },
+  "userId": {
+    "$oid": "6140948136b17e6114a66b01"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.98,
+    "code": "310",
+    "date": 1631404800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Top performer on wire machines. Aids in training new hires as well",
+    "previous": 14.55,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "David Taft",
+  "Ennis ID": "197601"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620156f"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae7"
+  },
+  "costCenter": "2046108",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 22.46,
+    "code": "310",
+    "date": 1576972800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual - Lead first shift",
+    "previous": 22.02,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Daniel Koenig",
+  "Ennis ID": "197562"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620157c"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afc"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.44,
+    "code": "310",
+    "date": 1631404800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Continues to perform well, aids in training new hires & other co-workers",
+    "previous": 14.02,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Jeffrey Pike",
+  "Ennis ID": "197588"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201583"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66af0"
+  },
+  "costCenter": "2046610",
+  "jobCode": "32615",
+  "jobTitle": "Composition Work",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.5,
+    "code": "308",
+    "date": 1630800000000,
+    "description": "Review",
+    "exempt": false,
+    "explanation": "$0.50 increase agreed upon positive 3 month review",
+    "previous": 14,
+    "percent": 3.6
+  },
+  "status": "Approved",
+  "Employee": "Joshua Litteer",
+  "Ennis ID": "156079"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201584"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66adc"
+  },
+  "costCenter": "2046301",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18.03,
+    "code": "310",
+    "date": 1631404800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual Review",
+    "previous": 17.68,
+    "percent": 2
+  },
+  "status": "Approved",
+  "Employee": "Kathleen Fitchette",
+  "Ennis ID": "197547"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201592"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aee"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 21.18,
+    "code": "310",
+    "date": 1621728000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Rob takes the initiative to make sure things get done & is always willing to help coworkers. Robis able to run all of the presses & any of the complex jobs that are handed to him",
+    "previous": 20.57,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Robert Leubner",
+  "Ennis ID": "197570"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201595"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ad3"
+  },
+  "costCenter": "2046631",
+  "jobCode": "32731",
+  "jobTitle": "Slitter Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.92,
+    "code": "310",
+    "date": 1625270400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual Review",
+    "previous": 17.48,
+    "percent": 2.5
+  },
+  "status": "Approved",
+  "Employee": "Ryan Coleman",
+  "Ennis ID": "197540"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620159f"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aed"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 21.38,
+    "code": "310",
+    "date": 1566691200000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review",
+    "previous": 21,
+    "percent": 1.8
+  },
+  "status": "Approved",
+  "Employee": "William Lawrence",
+  "Ennis ID": "197568"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620158d"
+  },
+  "userId": {
+    "$oid": "6140947936b17e6114a66acd"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 29.25,
+    "code": "310",
+    "date": 1623024000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Top CSR - handles ABTL prime accounts; assists in training",
+    "previous": 28.54,
+    "percent": 2.5
+  },
+  "status": "Approved",
+  "Employee": "Nicole Acton",
+  "Ennis ID": "197501"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c510016201597"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad5"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 24.04,
+    "code": "001",
+    "date": 1525132800000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "New Hire - at acquisition",
+    "previous": "",
+    "percent": ""
+  },
+  "status": "Approved",
+  "Employee": "Sean Costello",
+  "Ennis ID": "197508"
+},{
+  "_id": {
+    "$oid": "6183e5ac8c3c51001620159e"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af2"
+  },
+  "costCenter": "2046610",
+  "jobCode": "32615",
+  "jobTitle": "Composition Work",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 19.61,
+    "code": "310",
+    "date": 1569715200000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Promoted to PP Coordinator in Oct & has done a fantastic job managing OT & workflow while maintaining team morale. Wanda's leadership has strengthened a weak dept.",
+    "previous": 19.04,
+    "percent": 3
+  },
+  "status": "Approved",
+  "Employee": "Wanda Manning",
+  "Ennis ID": "197573"
+},{
+  "_id": {
+    "$oid": "61842ecad947fb11b4d18540"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af7"
+  },
+  "costCenter": "2046108",
+  "jobCode": "32605",
+  "jobTitle": "Press Operator",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 59759.65,
+    "code": "310",
+    "date": 1638075600000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Continues to grow into newly added shipping manager role and production manager backup.",
+    "previous": 58302.1,
+    "percent": 2.5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61842f1fd947fb11b4d18541"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66adb"
+  },
+  "costCenter": "2046301",
+  "jobCode": "12145",
+  "jobTitle": "Production Manager (M) SALARY",
+  "eeoClassification": "010",
+  "workCompClass": "4299",
+  "change": {
+    "after": 69010.03,
+    "code": "310",
+    "date": 1638075600000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Continues to grow into added production manager responsibility.  Oversees all of production and all finishing employees report directly",
+    "previous": 67326.86,
+    "percent": 2.5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "618c14f1f830e2001627ce90"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66b00"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.63,
+    "code": "310",
+    "date": 1638075600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Based on Kents attendance  and Quality of his work.  He also helps the other operators with minor machine issues.  Kent is also a member of our safety team. ",
+    "previous": 15.01,
+    "percent": 4.1
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61af648664832b0016bcd287"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ae2"
+  },
+  "costCenter": "2046731",
+  "jobCode": "42500",
+  "jobTitle": "Office Clerk PT",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 13.2,
+    "code": "008",
+    "date": 1640494800000,
+    "description": "Payroll Adjustment",
+    "exempt": false,
+    "explanation": "NYS Minimum Wage increase",
+    "previous": 12.5,
+    "percent": 5.6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61af64e764832b0016bcd288"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aea"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.54,
+    "code": "008",
+    "date": 1640494800000,
+    "description": "Payroll Adjustment",
+    "exempt": false,
+    "explanation": "NYS Minimum Wage increasing from $12.50 to $13.20.  Amanda performs duties in multiple areas that warrant the rate exceeding the NYS minimum",
+    "previous": 13,
+    "percent": 4.2
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61af64fa64832b0016bcd289"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af3"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.2,
+    "code": "008",
+    "date": 1640494800000,
+    "description": "Payroll Adjustment",
+    "exempt": false,
+    "explanation": "NYS Minimum Wage increase",
+    "previous": 12.5,
+    "percent": 5.6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61af654364832b0016bcd28a"
+  },
+  "userId": {
+    "$oid": "61682a0fca5f1000167e7376"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13,
+    "code": "001",
+    "date": 1633320000000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "",
+    "previous": 0,
+    "percent": 0
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61af65d964832b0016bcd28b"
+  },
+  "userId": {
+    "$oid": "61682a0fca5f1000167e7376"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.5,
+    "code": "008",
+    "date": 1640494800000,
+    "description": "Payroll Adjustment",
+    "exempt": false,
+    "explanation": "NYS Minimum Wage increase",
+    "previous": 13,
+    "percent": 3.8
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61af664864832b0016bcd28c"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae3"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.91,
+    "code": "310",
+    "date": 1640494800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Penny is a valued employee that helps in multiple areas of finishing.  NYS Minimum Wage is increasing and Penny needs to be worked up as well.",
+    "previous": 13.27,
+    "percent": 4.8
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61c0799a7386b8001670c003"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad8"
+  },
+  "costCenter": "2046613",
+  "jobCode": "32639",
+  "jobTitle": "Maintenance",
+  "eeoClassification": "009",
+  "workCompClass": "4299",
+  "change": {
+    "after": 19.5,
+    "code": "309",
+    "date": 1641099600000,
+    "description": "6 Month/Review",
+    "exempt": false,
+    "explanation": "Agreed at hire to a $1.00 / hr. raise after 6 months of employment based on merit.  After review, Travis has areas he needs to improve on following detailed job instructions with little to no oversight",
+    "previous": 19,
+    "percent": 2.6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "61d60f0dbd0b7e00167e4ecb"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afe"
+  },
+  "costCenter": "2046108",
+  "jobCode": "32605",
+  "jobTitle": "Press Operator",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.73,
+    "code": "310",
+    "date": 1642309200000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Merit.  Jake is always finding \"better\" ways to achieve higher rates.  Performs above expectations consistently.  Rises to challenges.",
+    "previous": 14.05,
+    "percent": 4.8
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "6203c96c7bc98400163efd3a"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae5"
+  },
+  "costCenter": "2046108",
+  "jobCode": "32605",
+  "jobTitle": "Press Operator",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.95,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Steve works independently with no help needed. He also works in multiple depts., helping wherever needed without any issues.  Great asset to our company. ",
+    "previous": 14.9,
+    "percent": 7
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620ac463b962e900165e10e7"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ade"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 17.88,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Large help coming over from SPF in implementing JDE.  Continues to work on growing inactive previous accounts",
+    "previous": 17,
+    "percent": 5.2
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620ac51ab962e900165e10e8"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae8"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 23.37,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Continues to perform dual role of lead CSR for GBS account and 1 of 2 dedicated estimators well.",
+    "previous": 22.59,
+    "percent": 3.5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620ac561b962e900165e10e9"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66acf"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 22.28,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "A knowledgeable employee who handles the bulk of our \"Fire\" customers.  Quotes and enters orders for distributor and direct customers.",
+    "previous": 21.63,
+    "percent": 3
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620ac5fab962e900165e10ea"
+  },
+  "userId": {
+    "$oid": "6140942c36b17e6114a66acc"
+  },
+  "costCenter": "2046901",
+  "jobCode": "325060",
+  "jobTitle": "Invoicing Clerk",
+  "eeoClassification": "005",
+  "workCompClass": "8810",
+  "change": {
+    "after": 19.73,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Continues to excel at role of A/R.",
+    "previous": 18.91,
+    "percent": 4.3
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620b9eed9618a40016e730d8"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ad2"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18.54,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Valuable knowledge asset. Will be expected to train new operators on the intricacies of pinfeed tags.",
+    "previous": 18,
+    "percent": 3
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620b9f1d9618a40016e730d9"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66ae9"
+  },
+  "costCenter": "2046108",
+  "jobCode": "32605",
+  "jobTitle": "Press Operator",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 72083.91,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Annual Review",
+    "previous": 70670.5,
+    "percent": 2
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620b9f549618a40016e730da"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afd"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18.22,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "",
+    "previous": 17.86,
+    "percent": 2
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620b9f6c9618a40016e730db"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aef"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.94,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Dorothy continues to improve. She has been running the 5 color press.  She always pushes to get work caught up and out on time.  She works overtime as needed without issues. ",
+    "previous": 17.31,
+    "percent": 3.6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620b9f7e9618a40016e730dc"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afa"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.83,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Jackie is a dedicated worker and a team player. she is an out standing worker and always ready to help out where she can.",
+    "previous": 17,
+    "percent": 4.9
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620b9f909618a40016e730de"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aed"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 22.13,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Bill has been a big help in tag department. He is willing to help out when needed. He is willing to work threw things to figure out how we can run them and also more efficient ",
+    "previous": 21.38,
+    "percent": 3.5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "620b9f9e9618a40016e730df"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae7"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 23.25,
+    "code": "310",
+    "date": 1645938000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Increased production rates overall. Departmental Knowledge asset. ",
+    "previous": 22.46,
+    "percent": 3.5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62220815f4435700160e712c"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aec"
+  },
+  "costCenter": "2046631",
+  "jobCode": "32727",
+  "jobTitle": "Shipping Clerk",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.3,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Russell has been a great asset in the shipping dept.  He has learned to use JDE and the shipping methods well.  He uses his time well to ensure that jobs ship in the allotted time frame. ",
+    "previous": 14.7,
+    "percent": 4.1
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62220c07f4435700160e7130"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ad1"
+  },
+  "costCenter": "2046631",
+  "jobCode": "32727",
+  "jobTitle": "Shipping Clerk",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 16.97,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Phil is very independent. He works hard in bldg. 2 shipping and also makes trips to bldg. 5 for our pick list items.  He works extra without being asked to get our work out.  Great asset to the company. ",
+    "previous": 16.18,
+    "percent": 4.9
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624198db0bf12800162ff5f8"
+  },
+  "userId": {
+    "$oid": "6140948136b17e6114a66b02"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 16.27,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Leader in her department. Consistently exceeds expected rate.",
+    "previous": 15.23,
+    "percent": 6.8
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624198ed0bf12800162ff5f9"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad4"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.17,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Above average mechanical and knowledge in his assigned department. Increased responsibilities in workflow management. ",
+    "previous": 16.2,
+    "percent": 6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624198fd0bf12800162ff5fa"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66aff"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.72,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Integral part of the team. Above average production rates. Increased knowledge base.",
+    "previous": 13.77,
+    "percent": 6.9
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "6241990d0bf12800162ff5fb"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ada"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 22.98,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Continued extra efforts to produce above average results.",
+    "previous": 22.12,
+    "percent": 3.9
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "6241992d0bf12800162ff5fd"
+  },
+  "userId": {
+    "$oid": "6140947936b17e6114a66acd"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 29.84,
+    "code": "310",
+    "date": 1654401600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Lead CSR that handles ABTL KEY accounts and outside sales reps.",
+    "previous": 29.25,
+    "percent": 2
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624199390bf12800162ff5fe"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aeb"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.43,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "CHANGE THIS EXPLANATION",
+    "previous": 16.6,
+    "percent": 5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624199b90bf12800162ff5ff"
+  },
+  "userId": {
+    "$oid": "61682a64ca5f1000167e7377"
+  },
+  "costCenter": "2046613",
+  "jobCode": "32639",
+  "jobTitle": "Maintenance",
+  "eeoClassification": "009",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18,
+    "code": "001",
+    "date": 1632715200000,
+    "description": "New Hire",
+    "exempt": false,
+    "explanation": "New Hire",
+    "previous": 0,
+    "percent": 0
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624199f30bf12800162ff601"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66af0"
+  },
+  "costCenter": "2046610",
+  "jobCode": "32615",
+  "jobTitle": "Composition Work",
+  "eeoClassification": "006",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.5,
+    "code": "301",
+    "date": 1648958400000,
+    "description": "Broadened Responsibility",
+    "exempt": false,
+    "explanation": "Josh has done an exemplary job in prepress in all areas.  As a result, Josh has been promoted to Lead Prepress Operator and will coordinate all assigned prepress activities and personnel.",
+    "previous": 14.5,
+    "percent": 20.7
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419e4f0bf12800162ff602"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ad3"
+  },
+  "costCenter": "2046631",
+  "jobCode": "32731",
+  "jobTitle": "Slitter Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18.8,
+    "code": "310",
+    "date": 1656216000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review/ added responsibilities receiving all materials/key member of the inventory team",
+    "previous": 17.92,
+    "percent": 4.9
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419e660bf12800162ff603"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ae0"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 23.51,
+    "code": "310",
+    "date": 1656216000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review/ continues to improve in his role as tag press supervisor",
+    "previous": 22.66,
+    "percent": 3.8
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419e9f0bf12800162ff605"
+  },
+  "userId": {
+    "$oid": "613a204ebf5ba54220018067"
+  },
+  "costCenter": "2046901",
+  "jobCode": "31571",
+  "jobTitle": "HR Rep.",
+  "eeoClassification": "005",
+  "workCompClass": "8810",
+  "change": {
+    "after": 18,
+    "code": "309",
+    "date": 1648958400000,
+    "description": "6 Month/Review",
+    "exempt": false,
+    "explanation": "Amy has continued to take on additional tasks/responsibilities such as credit management & accounts receivable functions",
+    "previous": 17,
+    "percent": 5.9
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419ed60bf12800162ff607"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66add"
+  },
+  "costCenter": "2046601",
+  "jobCode": "32425",
+  "jobTitle": "Material Handler",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.01,
+    "code": "309",
+    "date": 1648958400000,
+    "description": "6 Month/Review",
+    "exempt": false,
+    "explanation": "Continued growth at his position as well as the building 5 organization.",
+    "previous": 14,
+    "percent": 7.2
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419ee50bf12800162ff608"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66adf"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 20.04,
+    "code": "310",
+    "date": 1660449600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Consistently produces at high level. Above average rates. Committed to quality.",
+    "previous": 19.25,
+    "percent": 4.1
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419ef30bf12800162ff609"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad6"
+  },
+  "costCenter": "2046613",
+  "jobCode": "32901",
+  "jobTitle": "Janitor",
+  "eeoClassification": "009",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.73,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Dave has continued accepting additional job duties including daily trips to the warehouse for production supplies. Dave has also been heavily involved in the completion of our bldg-2 SW/shipping new floor layout.",
+    "previous": 14.84,
+    "percent": 6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419f130bf12800162ff60b"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ae1"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 16.21,
+    "code": "310",
+    "date": 1662868800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Annual review / continues to expand her role in learning new machines (wire/looper) and being efficient operating them.",
+    "previous": 15.35,
+    "percent": 5.6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419f1f0bf12800162ff60c"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae4"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 19.65,
+    "code": "310",
+    "date": 1662868800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Continues to be the top performer in the dept. / trains new hires on the knotters & loopers",
+    "previous": 18.89,
+    "percent": 4
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419f2c0bf12800162ff60d"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66adc"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 18.84,
+    "code": "310",
+    "date": 1662868800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Assisting training new hires on wire/shrinkwrapping unit",
+    "previous": 18.03,
+    "percent": 4.5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419f380bf12800162ff60e"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66afc"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.31,
+    "code": "309",
+    "date": 1648958400000,
+    "description": "6 Month/Review",
+    "exempt": false,
+    "explanation": "Trains new hires on the wire machines/ key member of inventory team / good performer",
+    "previous": 14.44,
+    "percent": 6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62419f5b0bf12800162ff60f"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad9"
+  },
+  "costCenter": "2046613",
+  "jobCode": "126550",
+  "jobTitle": "Maintenance Supervisor (S)",
+  "eeoClassification": "010",
+  "workCompClass": "4299",
+  "change": {
+    "after": 71434.7,
+    "code": "310",
+    "date": 1662868800000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Vital asset to management. Also oversees safety program",
+    "previous": 70034.02,
+    "percent": 2
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "6242efb0456d1a0016475caa"
+  },
+  "userId": {
+    "$oid": "6140948036b17e6114a66af9"
+  },
+  "costCenter": "2046631",
+  "jobCode": "32727",
+  "jobTitle": "Shipping Clerk",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.7,
+    "code": "309",
+    "date": 1648958400000,
+    "description": "6 Month/Review",
+    "exempt": false,
+    "explanation": "Bob continues to grow with the company.  He is making improvements in learning JDE and our UPS and FedX ship manager systems. He helps with receiving goods as they come in as well.  Bob puts forth good effort daily. ",
+    "previous": 14,
+    "percent": 5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624305f3177a7f0016bf2fa5"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af6"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 23.45,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Mark is the most senior tag operator and capable of of running complex manifolds.",
+    "previous": 22.66,
+    "percent": 3.5
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62430639177a7f0016bf2fa6"
+  },
+  "userId": {
+    "$oid": "6140947e36b17e6114a66aee"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 21.94,
+    "code": "310",
+    "date": 1648958400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Rob continues to assist other coworkers with orders as well as run complex tags / manifolds",
+    "previous": 21.18,
+    "percent": 3.6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62430686177a7f0016bf2fa7"
+  },
+  "userId": {
+    "$oid": "6140947a36b17e6114a66ace"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 16.65,
+    "code": "309",
+    "date": 1648958400000,
+    "description": "6 Month/Review",
+    "exempt": false,
+    "explanation": "Dan continues to grow in his tag press position",
+    "previous": 16,
+    "percent": 4.1
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624306d0177a7f0016bf2fa8"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af1"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 17.57,
+    "code": "310",
+    "date": 1659240000000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Tom produces the bulk of our sythentic tags.  Will be looking to expand his capabilities with training on other presses.",
+    "previous": 17,
+    "percent": 3.4
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624aeffa968aa6001603bec7"
+  },
+  "userId": {
+    "$oid": "6140947b36b17e6114a66ad5"
+  },
+  "costCenter": "2046731",
+  "jobCode": "32431",
+  "jobTitle": "Customer Service Rep.",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 51403.29,
+    "code": "310",
+    "date": 1649563200000,
+    "description": "Annual Review",
+    "exempt": true,
+    "explanation": "Annual Review",
+    "previous": 50003.2,
+    "percent": 2.8
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624af119968aa6001603bec8"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae6"
+  },
+  "costCenter": "2046795",
+  "jobCode": "124660",
+  "jobTitle": "Sales Manager (S)",
+  "eeoClassification": "004",
+  "workCompClass": "8742",
+  "change": {
+    "after": 90000,
+    "code": "302",
+    "date": 1649563200000,
+    "description": "Re-Classification",
+    "exempt": true,
+    "explanation": "Not-eligible for commisions",
+    "previous": 76483.68,
+    "percent": 17.7
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "624d7a7e92e413001673628e"
+  },
+  "userId": {
+    "$oid": "61682a64ca5f1000167e7377"
+  },
+  "costCenter": "2046613",
+  "jobCode": "32639",
+  "jobTitle": "Maintenance",
+  "eeoClassification": "009",
+  "workCompClass": "4299",
+  "change": {
+    "after": 19,
+    "code": "309",
+    "date": 1648958400000,
+    "description": "6 Month/Review",
+    "exempt": false,
+    "explanation": "Fulfilling Initial hire agreement after completing 6 months of satisfactory employment. Ed's mechanical skills has been a valued and welcome addition to Allen-Bailey",
+    "previous": 18,
+    "percent": 5.6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62a0d1f43805dd00168c5429"
+  },
+  "userId": {
+    "$oid": "620ac35ab962e900165e10e6"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.5,
+    "code": "001",
+    "date": 1644814800000,
+    "description": "New Hire",
+    "explanation": "",
+    "previous": 0,
+    "percent": 0
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "62a0d3393805dd00168c542a"
+  },
+  "userId": {
+    "$oid": "620ac35ab962e900165e10e6"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14,
+    "code": "308",
+    "date": 1655006400000,
+    "description": "Review",
+    "explanation": "Barb was given a 3 month probationary period at which time would receive a $.50 raise if she performed her duties well - which she has done",
+    "previous": 13.5,
+    "percent": 3.7
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "6311e9a05f4a4b0016da1cfe"
+  },
+  "userId": {
+    "$oid": "6140948136b17e6114a66b01"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.91,
+    "code": "310",
+    "date": 1662868800000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Top performer on wire machines. Aids in training new hires as well",
+    "previous": 14.98,
+    "percent": 6.2
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63600c3eecf4f900166f2dbc"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af5"
+  },
+  "costCenter": "2046601",
+  "jobCode": "32425",
+  "jobTitle": "Material Handler",
+  "eeoClassification": "008",
+  "workCompClass": "4299",
+  "change": {
+    "after": 14.5,
+    "code": "310",
+    "date": 1668315600000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Continues to improve in assigned role in material handling",
+    "previous": 13.5,
+    "percent": 7.4
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63a4bda37c4a7a0016546c48"
+  },
+  "userId": {
+    "$oid": "6140947f36b17e6114a66af3"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.5,
+    "code": "310",
+    "date": 1671944400000,
+    "description": "Annual Review",
+    "exempt": false,
+    "explanation": "Operates many machines.  Overdue for increase ( 11 years of service )",
+    "previous": 12.5,
+    "percent": 24
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63a4bdc27c4a7a0016546c49"
+  },
+  "userId": {
+    "$oid": "6140947c36b17e6114a66ae2"
+  },
+  "costCenter": "2046731",
+  "jobCode": "42500",
+  "jobTitle": "Office Clerk PT",
+  "eeoClassification": "004",
+  "workCompClass": "8810",
+  "change": {
+    "after": 14.2,
+    "code": "008",
+    "date": 1671944400000,
+    "description": "Payroll Adjustment",
+    "exempt": false,
+    "explanation": "NYS Minimum Wage increase",
+    "previous": 12.5,
+    "percent": 13.6
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63a4bdfa7c4a7a0016546c4a"
+  },
+  "userId": {
+    "$oid": "6140947d36b17e6114a66ae3"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15.5,
+    "code": "009",
+    "date": 1671944400000,
+    "description": "Annual Raise",
+    "exempt": false,
+    "explanation": "Operates many machines.  Skilled position gap too close to entry level.  Overdue for increase ( 9 years of service )",
+    "previous": 13.27,
+    "percent": 16.8
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63a4befa7c4a7a0016546c4d"
+  },
+  "userId": {
+    "$oid": "63a4be5a7c4a7a0016546c4b"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.5,
+    "code": "001",
+    "date": 1650859200000,
+    "description": "New Hire",
+    "explanation": "New Hire",
+    "previous": 0,
+    "percent": 0
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63a4bf4a7c4a7a0016546c4e"
+  },
+  "userId": {
+    "$oid": "63a4be5a7c4a7a0016546c4b"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15,
+    "code": "009",
+    "date": 1671944400000,
+    "description": "Annual Raise",
+    "explanation": "NYS Minimum Wage increase + progressing well in first year",
+    "previous": 13.5,
+    "percent": 11.1
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63a4bf8f7c4a7a0016546c4f"
+  },
+  "userId": {
+    "$oid": "620ac307b962e900165e10e5"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 13.5,
+    "code": "001",
+    "date": 1644210000000,
+    "description": "New Hire",
+    "explanation": "New Hire",
+    "previous": 0,
+    "percent": 0
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63a4bfc57c4a7a0016546c50"
+  },
+  "userId": {
+    "$oid": "620ac307b962e900165e10e5"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15,
+    "code": "009",
+    "date": 1671944400000,
+    "description": "Annual Raise",
+    "explanation": "NYS Minimum Wage increase + progressing well in first year",
+    "previous": 13.5,
+    "percent": 11.1
+  },
+  "status": "Approved"
+},{
+  "_id": {
+    "$oid": "63a4bfe67c4a7a0016546c51"
+  },
+  "userId": {
+    "$oid": "620ac35ab962e900165e10e6"
+  },
+  "costCenter": "2046109",
+  "jobCode": "326350",
+  "jobTitle": "Machine Operator",
+  "eeoClassification": "007",
+  "workCompClass": "4299",
+  "change": {
+    "after": 15,
+    "code": "009",
+    "date": 1671944400000,
+    "description": "Annual Raise",
+    "explanation": "NYS Minimum wage increase + progressing well in first year",
+    "previous": 13.5,
+    "percent": 11.1
+  },
+  "status": "Approved"
+}]
