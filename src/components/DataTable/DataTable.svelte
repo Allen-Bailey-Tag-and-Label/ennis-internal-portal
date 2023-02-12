@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { ResponsiveTable } from '$components';
   import Menu from './Menu.svelte';
 
@@ -20,6 +19,7 @@
   };
 
   // props (external)
+  export let addHandler;
   export let columns: {
     changeHandler?: Function;
     checked?: boolean | string;
@@ -29,6 +29,7 @@
     th: string;
     type?: string;
   }[] = [];
+  export let deleteHandler;
   export let isAddable = true;
   export let isDeleteable = true;
   export let isEditable = true;
@@ -47,28 +48,37 @@
   )
     updateRowSelectCheckbox('indeterminate');
 
-  // lifecycle
-  onMount(() => {
-    if (isDeleteable && [...columns].filter((column) => column.key === 'dtSelect').length === 0) {
-      columns = [
-        {
-          changeHandler: rowSelectChangeHandler,
-          classes: 'w-[1.75rem]',
-          key: 'dtSelect',
-          th: '',
-          type: 'checkbox'
-        },
-        ...columns.map((column) => {
-          if (isEditable) column = { type: 'input', ...column };
-          return column;
-        })
-      ];
-      rows = rows.map((row) => {
-        return { dtSelect: false, ...row };
-      });
-    }
-  });
+  $: if (
+    rows &&
+    isDeleteable &&
+    [...columns].filter((column) => column.key === 'dtSelect').length === 0
+  ) {
+    columns = [
+      {
+        changeHandler: rowSelectChangeHandler,
+        classes: 'w-[1.75rem]',
+        key: 'dtSelect',
+        th: '',
+        type: 'checkbox'
+      },
+      ...columns.map((column) => {
+        if (isEditable) column = { type: 'input', ...column };
+        return column;
+      })
+    ];
+    rows = rows.map((row) => {
+      return { dtSelect: false, ...row };
+    });
+  }
 </script>
 
-<Menu bind:rows {isAddable} {isDeleteable} {isExportable} />
+<Menu
+  bind:addHandler
+  bind:columns
+  bind:deleteHandler
+  bind:rows
+  {isAddable}
+  {isDeleteable}
+  {isExportable}
+/>
 <ResponsiveTable {...$$restProps} bind:columns bind:rows bind:sort bind:sortHandler />

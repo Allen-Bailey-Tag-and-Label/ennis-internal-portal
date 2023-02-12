@@ -5,9 +5,6 @@
   import MenuButton from './MenuButton.svelte';
 
   // handlers
-  let deleteRows = () => {
-    rows = rows.filter((row) => !row?.dtSelect);
-  };
   const hideMenu = () => (isMenuOpen = false);
   const toggleMenu = () => (isMenuOpen = !isMenuOpen);
 
@@ -16,9 +13,30 @@
   let isDeleteModalOpen = false;
 
   // props (external)
+  export let addHandler = () => {
+    rows = [
+      ...rows,
+      [...columns].reduce((obj, column) => {
+        obj[column.key] = '';
+        return obj;
+      }, {})
+    ];
+  };
+  export let columns: {
+    changeHandler?: Function;
+    checked?: boolean | string;
+    classes?: string;
+    editable?: boolean;
+    key: string;
+    th: string;
+    type?: string;
+  }[] = [];
   export let isAddable = true;
   export let isDeleteable = true;
   export let isExportable = true;
+  export let deleteHandler = () => {
+    rows = rows.filter((row) => !row?.dtSelect);
+  };
   export let rows: { [key: string]: any }[] = [];
 
   // props (dynamic)
@@ -26,7 +44,7 @@
   $: shouldShowOptions = isAddable || isDeleteable || isExportable;
 </script>
 
-<Modal bind:confirmHandler={deleteRows} bind:isOpen={isDeleteModalOpen} showHeader={false}>
+<Modal bind:confirmHandler={deleteHandler} bind:isOpen={isDeleteModalOpen} showHeader={false}>
   <svelte:fragment slot="body">
     <div class="flex flex-col  space-y-[1rem]">
       <div class="text-center text-[1.5rem] font-semibold">Delete rows?</div>
@@ -60,11 +78,18 @@
           : 'opacity-100 pointer-events-auto translate-y-0'}"
       >
         {#if isAddable}
-          <MenuButton {isMenuOpen} src={Plus}>Add</MenuButton>
+          <MenuButton
+            on:click={async () => {
+              await addHandler();
+              isMenuOpen = false;
+            }}
+            {isMenuOpen}
+            src={Plus}>Add</MenuButton
+          >
         {/if}
-        {#if isExportable}
+        <!-- {#if isExportable}
           <MenuButton {isMenuOpen} src={Clipboard}>Copy to Clipboard</MenuButton>
-        {/if}
+        {/if} -->
         {#if selectedRows.length > 0}
           <MenuButton
             on:click={() => {
@@ -75,9 +100,9 @@
             src={Trash}>Delete Selected</MenuButton
           >
         {/if}
-        {#if isExportable}
+        <!-- {#if isExportable}
           <MenuButton {isMenuOpen} src={DocumentDownload}>Export CSV</MenuButton>
-        {/if}
+        {/if} -->
       </Card>
     </div>
   </div>

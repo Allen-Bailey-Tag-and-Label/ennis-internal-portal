@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { DataTable } from '$components';
+  import { MongoTable } from '$components';
   import type { PageData } from './$types';
 
   // props (internal)
@@ -9,33 +9,20 @@
     { classes: 'w-[5rem]', key: 'name', th: 'Name' },
     { classes: 'w-[5rem]', key: 'route', th: 'Route' }
   ];
-  let rows: Rows = [];
+  let rows: {
+    group: string;
+    name: string;
+    route: string;
+  }[] = [];
 
   // props (external)
   export let data: PageData;
 
-  type Route = {
-    group: string;
-    name: string;
-    route: string;
-  };
-  type Rows = Route[];
-
   onMount(() => {
-    rows = data.routes.sort((a: Route, b: Route) =>
-      a.group < b.group
-        ? -1
-        : a.group > b.group
-        ? 1
-        : a.name < b.name
-        ? -1
-        : a.name > b.name
-        ? 1
-        : 0
-    );
+    rows = data.routes;
   });
 </script>
 
 <div class="flex flex-col flex-grow overflow-auto p-[1px]">
-  <DataTable bind:columns bind:rows />
+  <MongoTable bind:columns bind:rows collection="routes" />
 </div>

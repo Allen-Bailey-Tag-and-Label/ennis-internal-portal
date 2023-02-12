@@ -14,20 +14,14 @@
   };
 
   // utilities
-  const tdClasses = ({ classes, type }: { classes: string; type: string }) =>
-    twMerge(
-      type === 'checkbox' ? 'py-[.375rem]' : '',
-      type === 'input' ? 'px-0 py-0 ring-0' : '',
-      classes
-    );
-  const thClasses = ({ classes, key, type }: { classes: string; key: string; type: string }) =>
+  const thClasses = ({ classes, key, type }: { classes?: string; key: string; type: string }) =>
     twMerge('pr-[3.5rem]', classes);
 
   // props (external)
   export let columns: {
     checked?: boolean;
     changeHandler?: ((e: CustomEvent<any>) => void) | null | undefined;
-    classes?: string;
+    classes?: string | undefined;
     editable?: boolean;
     key: string;
     th: string;
@@ -58,16 +52,10 @@
     'overflow-auto bg-transparent dark:bg-transparent relative px-0 py-0 rounded-none self-start max-w-full',
     $$props.class
   );
-
-  // lifecycle
-  // onMount(() => {
-  //   columns = columns.map((column) => {
-  //     if (column?.type === 'checkbox') column.checked = column?.checked || false;
-  //     return column;
-  //   });
-  //   sort = { key: columns[0].key, direction: 1, ...sort };
-  //   sortHandler();
-  // });
+  $: if (rows.length > 0 && sort === undefined && columns.length > 0) {
+    sort = { key: [...columns].filter(({ key }) => key !== 'dtSelect')[0].key, direction: 1 };
+    sortHandler();
+  }
 </script>
 
 <Card class={classes}>
@@ -105,7 +93,7 @@
       {#each rows as row}
         <Tr>
           {#each columns as { key, type = "string" }}
-            <Td {...row} bind:value={row[key]} {type} />
+            <Td {...row} bind:value={row[key]} {key} {type} />
           {/each}
         </Tr>
       {/each}

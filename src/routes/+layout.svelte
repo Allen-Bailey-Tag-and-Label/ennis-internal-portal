@@ -13,7 +13,7 @@
   theme.set({
     button:
       'cursor-pointer bg-primary-500 hover:bg-primary-600 focus:bg-primary-600 focus:ring-primary-600/[.3]',
-    card: `${cardShadow} dark:bg-gray-900`,
+    card: `${cardShadow} dark:bg-gray-800`,
     checkbox: twMerge(
       input,
       'mr-[1rem] px-0 py-0 w-[1.75rem] h-[1.75rem] text-white flex items-center justify-center peer-focus:ring-offset-primary-500 peer-focus:ring-primary-500/[.3]'

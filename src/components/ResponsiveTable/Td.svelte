@@ -16,6 +16,7 @@
   let style: string | undefined = undefined;
 
   // props (external)
+  export let key: string = '';
   export let type: string = 'input';
   export let value: any = '';
 
@@ -27,12 +28,13 @@
 
 <Td class={tdClasses()} {style}>
   {#if type === 'checkbox'}
-    <Checkbox bind:checked={value} on:change={$$props?.changeHandler} />
+    <Checkbox bind:checked={value} on:change={$$props?.changeHandler?.({ key, value })} />
   {/if}
   {#if type === 'input'}
     <Input
       bind:value
       class="w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1]"
+      on:change={$$props?.changeHandler?.({ key, value })}
     />
     <div
       bind:clientWidth

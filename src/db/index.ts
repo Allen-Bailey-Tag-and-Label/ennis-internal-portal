@@ -18,11 +18,6 @@ const connect = async () => {
   if (connection === undefined) connection = await client.connect();
 };
 
-type InsertProp = {
-  collection: string;
-  doc: object;
-};
-
 const deleteMany = async ({ collection, query = {} }: { collection: string; query: object }) => {
   // await connection
   await connect();
@@ -31,25 +26,7 @@ const deleteMany = async ({ collection, query = {} }: { collection: string; quer
   await client.db().collection(collection).deleteMany(query);
 };
 
-const insertOne = async ({ collection, doc }: InsertProp) => {
-  // await connection
-  await connect();
-
-  // create doc
-  const { value: createdDoc } = await client
-    .db()
-    .collection(collection)
-    .findOneAndUpdate(doc, { $set: {} }, { upsert: true, returnDocument: 'after' });
-
-  return JSON.parse(JSON.stringify(createdDoc));
-};
-
-type FindProp = {
-  collection: string;
-  query: {};
-};
-
-const find = async ({ collection, query }: FindProp) => {
+const find = async ({ collection, query }: { collection: string; query: {} }) => {
   // await connection
   await connect();
 
@@ -59,7 +36,7 @@ const find = async ({ collection, query }: FindProp) => {
   return JSON.parse(JSON.stringify(docs));
 };
 
-const findOne = async ({ collection, query }: FindProp) => {
+const findOne = async ({ collection, query }: { collection: string; query: {} }) => {
   // await connection
   await connect();
 
@@ -69,13 +46,15 @@ const findOne = async ({ collection, query }: FindProp) => {
   return JSON.parse(JSON.stringify(doc));
 };
 
-type FindOneAndUpdateProp = {
+const findOneAndUpdate = async ({
+  collection,
+  query,
+  update
+}: {
   collection: string;
   query: object;
   update: object;
-};
-
-const findOneAndUpdate = async ({ collection, query, update }: FindOneAndUpdateProp) => {
+}) => {
   // await connection
   await connect();
 
@@ -88,4 +67,17 @@ const findOneAndUpdate = async ({ collection, query, update }: FindOneAndUpdateP
   return JSON.parse(JSON.stringify(doc));
 };
 
-export { deleteMany, insertOne, find, findOne, findOneAndUpdate };
+const insertOne = async ({ collection, doc }: { collection: string; doc: object }) => {
+  // await connection
+  await connect();
+
+  // create doc
+  const { value: createdDoc } = await client
+    .db()
+    .collection(collection)
+    .findOneAndUpdate(doc, { $set: {} }, { upsert: true, returnDocument: 'after' });
+
+  return JSON.parse(JSON.stringify(createdDoc));
+};
+
+export { deleteMany, find, findOne, findOneAndUpdate, insertOne };
