@@ -5,9 +5,9 @@
 
   // props (internal)
   let columns = [
-    { classes: 'w-[5rem]', key: 'group', th: 'Group' },
-    { classes: 'w-[5rem]', key: 'name', th: 'Name' },
-    { classes: 'w-[5rem]', key: 'route', th: 'Route' }
+    { key: 'group', th: 'Group' },
+    { key: 'name', th: 'Name' },
+    { key: 'route', th: 'Route' }
   ];
   let rows: {
     group: string;

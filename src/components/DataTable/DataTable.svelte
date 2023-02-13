@@ -81,4 +81,11 @@
   {isDeleteable}
   {isExportable}
 />
-<ResponsiveTable {...$$restProps} bind:columns bind:rows bind:sort bind:sortHandler />
+<ResponsiveTable
+  {...$$restProps}
+  bind:columns
+  bind:rows
+  bind:sort
+  bind:sortHandler
+  class={$$props.class}
+/>

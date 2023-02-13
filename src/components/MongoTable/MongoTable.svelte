@@ -117,7 +117,15 @@
 </script>
 
 {#if collection}
-  <DataTable {...$$restProps} bind:addHandler bind:columns bind:deleteHandler bind:rows bind:sort />
+  <DataTable
+    {...$$restProps}
+    bind:addHandler
+    bind:columns
+    bind:deleteHandler
+    bind:rows
+    bind:sort
+    class={$$props.class}
+  />
 {/if}
 {#if !collection}
   <Card

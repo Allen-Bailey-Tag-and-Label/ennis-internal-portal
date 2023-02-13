@@ -22,7 +22,7 @@
 
   // props (dynamic)
   $: if (type === 'input') {
-    style = `width: ${clientWidth}px`;
+    style = `min-width: ${clientWidth}px`;
   }
 </script>
 
