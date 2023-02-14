@@ -23,8 +23,16 @@ const protectedRoutesHandle: Handle = async ({ event, resolve }) => {
 
       // get all user routes
       const userRoutes = [
-        ...new Set(...roles.map((role: { routes: string[] }) => role.routes))
-      ].map((_routeId) => routes.find((route: { _id: string }) => route._id === _routeId));
+        ...new Set(
+          user.roles
+            .map((_roleId) =>
+              roles
+                .find(({ _id }) => _id === _roleId)
+                .routes.map((_routeId) => routes.find(({ _id }) => _id === _routeId))
+            )
+            .flat()
+        )
+      ];
 
       // get user navigation
       let navigation = userRoutes.reduce((obj, route) => {
@@ -38,10 +46,14 @@ const protectedRoutesHandle: Handle = async ({ event, resolve }) => {
       }, {});
 
       // sort user navigation
-      navigation = Object.keys(navigation).reduce((obj, key) => {
-        obj[key] = navigation[key].sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
-        return obj;
-      }, {});
+      navigation = Object.keys(navigation)
+        .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
+        .reduce((obj, key) => {
+          obj[key] = navigation[key].sort((a, b) =>
+            a.name < b.name ? -1 : a.name > b.name ? 1 : 0
+          );
+          return obj;
+        }, {});
 
       // update user local navigation
       event.locals.user.navigation = navigation;
