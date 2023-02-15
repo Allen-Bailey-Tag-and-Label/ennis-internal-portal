@@ -1,7 +1,6 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
   import { Button, Fieldset, Form, Input, PasswordInput, RouteTitle } from '$components';
-  // import RouteTitle from '../RouteTitle.svelte';
 
   // types
   type Form = {

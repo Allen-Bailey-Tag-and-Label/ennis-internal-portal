@@ -1,8 +1,7 @@
 <script lang="ts">
     import {theme} from 'sveltewind/stores';
     import { enhance } from '$app/forms';
-  import { Button, Fieldset, Form, Input } from '$components';
-  import RouteTitle from '../RouteTitle.svelte'
+  import { Button, Fieldset, Form, Input, RouteTitle } from '$components';
 
   // types
   type Form = {
