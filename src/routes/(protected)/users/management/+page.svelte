@@ -70,9 +70,11 @@
       if (column.key === 'roles')
         return {
           ...column,
-          options: data.roles.map((role) => {
-            return { label: role.name, value: role._id };
-          })
+          options: data.roles
+            .map((role) => {
+              return { label: role.name, value: role._id };
+            })
+            .sort((a, b) => (a.label < b.label ? -1 : a.label > b.label ? 1 : 0))
         };
       return column;
     });
