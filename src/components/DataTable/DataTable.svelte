@@ -4,8 +4,9 @@
 
   // handlers
   const rowSelectChangeHandler = (e) => {
+    console.log('yup', e.target.checked);
     rows = rows.map((row) => {
-      row.dtSelect = e.target.checked;
+      row.dtSelect = !e.target.checked;
       return row;
     });
   };
@@ -27,6 +28,7 @@
     editable?: boolean;
     key: string;
     th: string;
+    thChangeHandler?: Function;
     type?: string;
   }[] = [];
   export let deleteHandler;
@@ -55,10 +57,11 @@
   ) {
     columns = [
       {
-        changeHandler: rowSelectChangeHandler,
+        changeHandler: () => {},
         classes: 'w-[1.75rem]',
         key: 'dtSelect',
         th: '',
+        thChangeHandler: rowSelectChangeHandler,
         type: 'checkbox'
       },
       ...columns.map((column) => {

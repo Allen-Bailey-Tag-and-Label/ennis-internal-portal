@@ -80,20 +80,17 @@
   }[] = [];
   export let sort = undefined;
 
-  $: if ([...rows].filter((row) => row?.changeHandler === undefined).length > 0) {
-    rows = rows.map((row) => {
+  $: if ([...columns].filter((column) => column?.changeHandler === undefined).length > 0) {
+    columns = columns?.map((column) => {
       return {
-        changeHandler: async ({ key, value }: { key: string; value: string }) => {
-          // exit if key is dtSelect
-          if (['dtSelect'].includes(key)) return;
-
+        changeHandler: async ({ key, row, value }) => {
           // create query
           const query = { _id: row._id };
 
           // create update
-          const update: { $set: { [key: string]: string } } = { $set: {} };
+          const update: { $set: { [key: string]: any } } = { $set: {} };
 
-          // update key on $set property
+          // set column key value
           update.$set[key] = value;
 
           // create formData
@@ -110,10 +107,44 @@
             method: 'post'
           });
         },
-        ...row
+        ...column
       };
     });
   }
+  // $: if ([...rows].filter((row) => row?.changeHandler === undefined).length > 0) {
+  //   rows = rows.map((row) => {
+  //     return {
+  //       changeHandler: async ({ key, value }: { key: string; value: string }) => {
+  //         // exit if key is dtSelect
+  //         if (['dtSelect'].includes(key)) return;
+
+  //         // create query
+  //         const query = { _id: row._id };
+
+  //         // create update
+  //         const update: { $set: { [key: string]: string } } = { $set: {} };
+
+  //         // update key on $set property
+  //         update.$set[key] = value;
+
+  //         // create formData
+  //         const formData = new FormData();
+
+  //         // append values
+  //         formData.append('collection', collection);
+  //         formData.append('query', JSON.stringify(query));
+  //         formData.append('update', JSON.stringify(update));
+
+  //         // post to formaction
+  //         await fetch('/api/mongodb?/update', {
+  //           body: formData,
+  //           method: 'post'
+  //         });
+  //       },
+  //       ...row
+  //     };
+  //   });
+  // }
 </script>
 
 {#if collection}

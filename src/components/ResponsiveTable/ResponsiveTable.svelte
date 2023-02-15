@@ -61,7 +61,7 @@
 <Card class={classes}>
   <Table>
     <Thead>
-      {#each columns as { checked = false, changeHandler = undefined, classes = undefined, key, th, type = 'string' }}
+      {#each columns as { checked = false, classes = undefined, key, th, thChangeHandler = undefined, type = 'string' }}
         <Th class={thClasses({ classes, key, type })} on:click={() => thClickHandler({ key })}>
           {#if type === 'checkbox'}
             <Checkbox
@@ -70,7 +70,7 @@
                 'ring-offset-white hover:ring-offset-white peer-focus:ring-offset-white peer-focus:ring-white/[.3] dark:ring-offset-white dark:hover:ring-offset-white dark:peer-focus:ring-offset-white dark:peer-focus:ring-white/[.3]',
                 !checked ? 'text-white' : 'text-white'
               )}
-              on:change={changeHandler}
+              on:change={thChangeHandler}
             >
               {th}
             </Checkbox>
@@ -92,8 +92,8 @@
     <Tbody>
       {#each rows as row}
         <Tr>
-          {#each columns as { key, type = "string" }}
-            <Td {...row} bind:value={row[key]} {key} {type} />
+          {#each columns as { key, type = "string", ...column }}
+            <Td {...column} {...row} bind:value={row[key]} {key} {type} {row} />
           {/each}
         </Tr>
       {/each}
