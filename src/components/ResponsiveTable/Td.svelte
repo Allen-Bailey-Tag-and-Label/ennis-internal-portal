@@ -36,7 +36,7 @@
   {#if type === 'date'}
     <Input
       bind:value
-      class="py-[calc(1rem_*_11_/_26)] w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] dark:[color-scheme:dark]"
+      class="py-[calc(1rem_*_11_/_26)] min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] dark:[color-scheme:dark]"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       type="date"
     />
@@ -44,7 +44,7 @@
   {#if type === 'input'}
     <Input
       bind:value
-      class="w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1]"
+      class="min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1]"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       size={value.length > 0 ? value.length : '1'}
     />
@@ -52,21 +52,25 @@
   {#if type === 'int'}
     <Input
       bind:value
-      class="w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] lg:hidden"
+      class="min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] lg:hidden"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       size={value.length > 0 ? value.length : '1'}
       type="tel"
     />
     <Input
       bind:value
-      class="w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] hidden lg:block"
+      class="min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] hidden lg:block"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       size={value.length > 0 ? value.length : '1'}
       type="number"
     />
   {/if}
   {#if type === 'multipleInput'}
-    <MultipleInput bind:value options={$$props.options} />
+    <MultipleInput
+      bind:value
+      on:change={$$props?.changeHandler?.({ key, row, value })}
+      options={$$props.options}
+    />
   {/if}
   {#if type === 'string'}
     {value}

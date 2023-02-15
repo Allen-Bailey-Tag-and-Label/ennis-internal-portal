@@ -93,6 +93,8 @@
           // set column key value
           update.$set[key] = value;
 
+          console.log({ collection, query, update });
+
           // create formData
           const formData = new FormData();
 

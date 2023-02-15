@@ -19,6 +19,7 @@
       .toString()
       .padStart(6, '0');
     doc.password = JSON.stringify(crypto.SHA256(doc.initialPassword).words);
+    doc.roles = [data.roles.find((role) => role.name === 'User')._id];
 
     // create formData
     const formData = new FormData();
@@ -52,6 +53,7 @@
     { key: 'extension', th: 'Extension', type: 'int' },
     { key: 'hireDate', th: 'Hired', type: 'date' },
     { key: 'initialPassword', th: 'Initial Password', type: 'int' },
+    { class: 'min-w-[20rem]', options: [], key: 'roles', th: 'Roles', type: 'multipleInput' },
     { key: 'redirectSignIn', th: 'Sign In Route' },
     { key: 'username', th: 'Username' },
     { key: 'exempt', th: 'Exempt', type: 'checkbox' },
@@ -64,6 +66,16 @@
 
   // lifecycle
   onMount(() => {
+    columns = columns.map((column) => {
+      if (column.key === 'roles')
+        return {
+          ...column,
+          options: data.roles.map((role) => {
+            return { label: role.name, value: role._id };
+          })
+        };
+      return column;
+    });
     rows = data.users;
   });
 </script>
