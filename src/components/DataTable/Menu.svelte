@@ -87,9 +87,9 @@
             src={Plus}>Add</MenuButton
           >
         {/if}
-        <!-- {#if isExportable}
+        {#if isExportable}
           <MenuButton {isMenuOpen} src={Clipboard}>Copy to Clipboard</MenuButton>
-        {/if} -->
+        {/if}
         {#if selectedRows.length > 0}
           <MenuButton
             on:click={() => {
@@ -100,9 +100,9 @@
             src={Trash}>Delete Selected</MenuButton
           >
         {/if}
-        <!-- {#if isExportable}
+        {#if isExportable}
           <MenuButton {isMenuOpen} src={DocumentDownload}>Export CSV</MenuButton>
-        {/if} -->
+        {/if}
       </Card>
     </div>
   </div>

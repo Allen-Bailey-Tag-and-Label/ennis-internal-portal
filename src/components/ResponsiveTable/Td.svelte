@@ -7,7 +7,7 @@
   const tdClasses = () =>
     twMerge(
       type === 'checkbox' ? 'py-[.375rem]' : '',
-      type === 'input' ? 'relative px-0 py-0 ring-0' : '',
+      type === 'date' || type === 'input' || type === 'int' ? 'relative px-0 py-0 ring-0' : '',
       $$props.class
     );
 
@@ -30,18 +30,37 @@
   {#if type === 'checkbox'}
     <Checkbox bind:checked={value} on:change={$$props?.changeHandler?.({ key, value })} />
   {/if}
+  {#if type === 'date'}
+    <Input
+      bind:value
+      class="py-[calc(1rem_*_11_/_26)] w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] dark:[color-scheme:dark]"
+      on:change={$$props?.changeHandler?.({ key, value })}
+      type="date"
+    />
+  {/if}
   {#if type === 'input'}
     <Input
       bind:value
       class="w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1]"
       on:change={$$props?.changeHandler?.({ key, value })}
+      size={value.length > 0 ? value.length : '1'}
     />
-    <div
-      bind:clientWidth
-      class={twMerge($theme.input, 'absolute top-0 left-0 opacity-0 pointer-events-none')}
-    >
-      {value}
-    </div>
+  {/if}
+  {#if type === 'int'}
+    <Input
+      bind:value
+      class="w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] lg:hidden"
+      on:change={$$props?.changeHandler?.({ key, value })}
+      size={value.length > 0 ? value.length : '1'}
+      type="tel"
+    />
+    <Input
+      bind:value
+      class="w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] hidden lg:block"
+      on:change={$$props?.changeHandler?.({ key, value })}
+      size={value.length > 0 ? value.length : '1'}
+      type="number"
+    />
   {/if}
   {#if type === 'string'}
     {value}

@@ -26,7 +26,7 @@ const updateObjectIdKeys = (obj) =>
     if (Array.isArray(value)) reduceObj[key] = updateArrayIdKeys(value);
 
     // check if value is string
-    if (typeof value === 'string')
+    if (typeof value === 'boolean' || typeof value === 'string')
       reduceObj[key] = key.charAt(0) === '_' ? new ObjectId(obj[key]) : obj[key];
 
     return reduceObj;

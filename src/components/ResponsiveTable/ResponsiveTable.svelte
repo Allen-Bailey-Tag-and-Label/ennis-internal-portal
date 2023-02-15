@@ -74,7 +74,7 @@
             >
               {th}
             </Checkbox>
-          {:else if type === 'input' || type === 'string'}
+          {:else if type === 'date' || type === 'input' || type === 'int' || type === 'string'}
             {th}
           {/if}
           {#if key === sort?.key}

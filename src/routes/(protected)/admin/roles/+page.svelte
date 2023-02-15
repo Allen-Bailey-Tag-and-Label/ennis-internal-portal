@@ -44,7 +44,7 @@
   export let data: PageData;
 
   // props (dynamic)
-  $: if (rows) {
+  $: if ([...rows].filter((row) => row?.changeHandler === undefined).length > 0) {
     rows = rows.map((row) => {
       return {
         changeHandler: async ({ key, value }) => {

@@ -72,15 +72,17 @@
   }
 </script>
 
-<Menu
-  bind:addHandler
-  bind:columns
-  bind:deleteHandler
-  bind:rows
-  {isAddable}
-  {isDeleteable}
-  {isExportable}
-/>
+{#if isAddable || isDeleteable || isEditable || isExportable}
+  <Menu
+    bind:addHandler
+    bind:columns
+    bind:deleteHandler
+    bind:rows
+    {isAddable}
+    {isDeleteable}
+    {isExportable}
+  />
+{/if}
 <ResponsiveTable
   {...$$restProps}
   bind:columns

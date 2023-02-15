@@ -9,6 +9,9 @@
     { key: 'email', th: 'Email' },
     { key: 'extension', th: 'Extension' }
   ];
+  let isAddable = false;
+  let isDeleteable = false;
+  let isEditable = false;
   let rows: {}[] = [];
 
   // props (external)
@@ -21,5 +24,5 @@
 </script>
 
 <div class="flex flex-col flex-grow overflow-hidden">
-  <DataTable bind:columns bind:rows isEditable={false} />
+  <DataTable bind:columns bind:rows bind:isAddable bind:isDeleteable bind:isEditable />
 </div>
