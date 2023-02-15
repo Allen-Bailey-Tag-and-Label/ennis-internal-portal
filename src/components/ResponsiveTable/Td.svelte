@@ -6,6 +6,7 @@
   // utilities
   const tdClasses = () =>
     twMerge(
+      'h-[inherit]',
       type === 'checkbox' ? 'py-[.375rem]' : '',
       type === 'date' || type === 'input' || type === 'int' || type === 'multipleInput'
         ? 'relative px-0 py-0 ring-0'
@@ -36,7 +37,7 @@
   {#if type === 'date'}
     <Input
       bind:value
-      class="py-[calc(1rem_*_11_/_26)] min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] dark:[color-scheme:dark]"
+      class="h-full py-[calc(1rem_*_11_/_26)] min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] dark:[color-scheme:dark]"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       type="date"
     />
@@ -44,24 +45,24 @@
   {#if type === 'input'}
     <Input
       bind:value
-      class="min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1]"
+      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1]"
       on:change={$$props?.changeHandler?.({ key, row, value })}
-      size={value.length > 0 ? value.length : '1'}
+      size={value.length > 0 ? Math.ceil(value.length * (23.25 / 22)) : '1'}
     />
   {/if}
   {#if type === 'int'}
     <Input
       bind:value
-      class="min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] lg:hidden"
+      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] lg:hidden"
       on:change={$$props?.changeHandler?.({ key, row, value })}
-      size={value.length > 0 ? value.length : '1'}
+      size={value.length > 0 ? Math.ceil(value.length * (23.25 / 22)) : '1'}
       type="tel"
     />
     <Input
       bind:value
-      class="min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] hidden lg:block"
+      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] hidden lg:block"
       on:change={$$props?.changeHandler?.({ key, row, value })}
-      size={value.length > 0 ? value.length : '1'}
+      size={value.length > 0 ? Math.ceil(value.length * (23.25 / 22)) : '1'}
       type="number"
     />
   {/if}

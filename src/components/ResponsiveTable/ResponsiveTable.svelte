@@ -91,7 +91,7 @@
     </Thead>
     <Tbody>
       {#each rows as row}
-        <Tr>
+        <Tr class="h-[0px]">
           {#each columns as { key, type = "string", ...column }}
             <Td {...column} {...row} bind:value={row[key]} {key} {type} {row} />
           {/each}

@@ -2,6 +2,7 @@
   import { createEventDispatcher } from 'svelte';
   import { theme } from 'sveltewind/stores';
   import { twMerge } from 'tailwind-merge';
+  import { clickOutside } from '$actions';
   import { Button, Card, Icon } from '$components';
   import { ChevronDown, X } from '$icons';
 
@@ -13,6 +14,7 @@
     // dispatch change event
     dispatch('change', value);
   };
+  const closeMenu = () => (menuIsOpen = false);
   const optionClickHandler = (option) => {
     // initiate exists variable
     let exists = false;
@@ -48,7 +50,7 @@
   );
 </script>
 
-<div class={containerClasses}>
+<div class={containerClasses} use:clickOutside={closeMenu}>
   <div class="flex gap-[.5rem] px-[.5rem] flex-wrap items-center min-h-[2rem]">
     {#each value as v, i}
       <div
@@ -71,17 +73,28 @@
         class="justify-start rounded-none {!value.includes(option.value)
           ? 'bg-transparent'
           : 'bg-primary-500'}"
-        on:click={() => optionClickHandler(option)}>{option.label}</Button
+        on:click={() => optionClickHandler(option)}
+        tabindex={!menuIsOpen ? '-1' : undefined}
       >
+        {option.label}
+      </Button>
     {/each}
   </Card>
-  <Button class="absolute top-0 right-[2.5rem] px-[.5rem] bg-transparent" on:click={toggleMenu}>
+  <Button
+    class="absolute top-0 right-[2.5rem] px-[.5rem] bg-transparent"
+    on:click={toggleMenu}
+    tabindex="-1"
+  >
     <Icon
       class="transition duration-200 {!menuIsOpen ? 'rotate-0' : 'rotate-180'}"
       src={ChevronDown}
     />
   </Button>
-  <Button class="absolute top-0 right-0 px-[.5rem] bg-transparent" on:click={clearValues}>
+  <Button
+    class="absolute top-0 right-0 px-[.5rem] bg-transparent"
+    on:click={clearValues}
+    tabindex="-1"
+  >
     <Icon src={X} />
   </Button>
 </div>
