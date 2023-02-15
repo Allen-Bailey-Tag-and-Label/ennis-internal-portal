@@ -53,7 +53,7 @@
     { key: 'extension', th: 'Extension', type: 'int' },
     { key: 'hireDate', th: 'Hired', type: 'date' },
     { key: 'initialPassword', th: 'Initial Password', type: 'int' },
-    { class: 'min-w-[20rem]', options: [], key: 'roles', th: 'Roles', type: 'multipleInput' },
+    { class: 'min-w-[40rem]', options: [], key: 'roles', th: 'Roles', type: 'multipleInput' },
     { key: 'redirectSignIn', th: 'Sign In Route' },
     { key: 'username', th: 'Username' },
     { key: 'exempt', th: 'Exempt', type: 'checkbox' },

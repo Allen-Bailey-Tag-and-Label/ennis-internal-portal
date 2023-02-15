@@ -24,7 +24,8 @@ const config = {
       $icons: resolve('./src/icons'),
       $lib: resolve('./src/lib'),
       $routes: resolve('./src/routes'),
-      $src: resolve('./src')
+      $src: resolve('./src'),
+      $transitions: resolve('./src/transitions')
     }
   }
 };

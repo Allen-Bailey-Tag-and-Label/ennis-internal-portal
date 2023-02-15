@@ -32,12 +32,16 @@
 
 <Td class={tdClasses()} {style}>
   {#if type === 'checkbox'}
-    <Checkbox bind:checked={value} on:change={$$props?.changeHandler?.({ key, row, value })} />
+    <Checkbox
+      bind:checked={value}
+      class={$$props.class}
+      on:change={$$props?.changeHandler?.({ key, row, value })}
+    />
   {/if}
   {#if type === 'date'}
     <Input
       bind:value
-      class="h-full py-[calc(1rem_*_11_/_26)] min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] dark:[color-scheme:dark]"
+      class="h-full py-[calc(1rem_*_11_/_26)] min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] dark:[color-scheme:dark] {$$props.class}"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       type="date"
     />
@@ -45,7 +49,7 @@
   {#if type === 'input'}
     <Input
       bind:value
-      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1]"
+      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] {$$props.class}"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       size={value.length > 0 ? Math.ceil(value.length * (23.25 / 22)) : '1'}
     />
@@ -53,14 +57,14 @@
   {#if type === 'int'}
     <Input
       bind:value
-      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] lg:hidden"
+      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] lg:hidden {$$props.class}"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       size={value.length > 0 ? Math.ceil(value.length * (23.25 / 22)) : '1'}
       type="tel"
     />
     <Input
       bind:value
-      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] hidden lg:block"
+      class="h-full min-w-full rounded-none focus:bg-primary-500/[.15] dark:focus:bg-primary-500/[.1] hidden lg:block {$$props.class}"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       size={value.length > 0 ? Math.ceil(value.length * (23.25 / 22)) : '1'}
       type="number"
@@ -69,6 +73,7 @@
   {#if type === 'multipleInput'}
     <MultipleInput
       bind:value
+      class={$$props.class}
       on:change={$$props?.changeHandler?.({ key, row, value })}
       options={$$props.options}
     />

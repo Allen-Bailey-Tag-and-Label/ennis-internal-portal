@@ -61,7 +61,7 @@
 <Card class={classes}>
   <Table>
     <Thead>
-      {#each columns as { checked = false, classes = undefined, key, th, thChangeHandler = undefined, type = 'string' }}
+      {#each columns as { checked = false, key, th, thChangeHandler = undefined, classes = undefined, type = 'string' }}
         <Th class={thClasses({ classes, key, type })} on:click={() => thClickHandler({ key })}>
           {#if type === 'checkbox'}
             <Checkbox

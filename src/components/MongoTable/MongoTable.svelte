@@ -93,8 +93,6 @@
           // set column key value
           update.$set[key] = value;
 
-          console.log({ collection, query, update });
-
           // create formData
           const formData = new FormData();
 
@@ -113,40 +111,6 @@
       };
     });
   }
-  // $: if ([...rows].filter((row) => row?.changeHandler === undefined).length > 0) {
-  //   rows = rows.map((row) => {
-  //     return {
-  //       changeHandler: async ({ key, value }: { key: string; value: string }) => {
-  //         // exit if key is dtSelect
-  //         if (['dtSelect'].includes(key)) return;
-
-  //         // create query
-  //         const query = { _id: row._id };
-
-  //         // create update
-  //         const update: { $set: { [key: string]: string } } = { $set: {} };
-
-  //         // update key on $set property
-  //         update.$set[key] = value;
-
-  //         // create formData
-  //         const formData = new FormData();
-
-  //         // append values
-  //         formData.append('collection', collection);
-  //         formData.append('query', JSON.stringify(query));
-  //         formData.append('update', JSON.stringify(update));
-
-  //         // post to formaction
-  //         await fetch('/api/mongodb?/update', {
-  //           body: formData,
-  //           method: 'post'
-  //         });
-  //       },
-  //       ...row
-  //     };
-  //   });
-  // }
 </script>
 
 {#if collection}

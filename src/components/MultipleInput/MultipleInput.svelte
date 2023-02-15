@@ -5,6 +5,7 @@
   import { clickOutside } from '$actions';
   import { Button, Card, Icon } from '$components';
   import { ChevronDown, X } from '$icons';
+  import { grow } from '$transitions';
 
   // handlers
   const clearValues = () => {
@@ -31,7 +32,12 @@
     // dispatch change event
     dispatch('change', value);
   };
-  const removeValue = (i) => (value = value.filter((_, index) => i !== index));
+  const removeValue = (i) => {
+    value = value.filter((_, index) => i !== index);
+
+    // dispatch change event
+    dispatch('change', value);
+  };
   const toggleMenu = () => (menuIsOpen = !menuIsOpen);
 
   // props (internal)
@@ -50,11 +56,12 @@
   );
 </script>
 
-<div class={containerClasses} use:clickOutside={closeMenu}>
+<button class={containerClasses} on:click|self={toggleMenu} use:clickOutside={closeMenu}>
   <div class="flex gap-[.5rem] px-[.5rem] flex-wrap items-center min-h-[2rem]">
     {#each value as v, i}
       <div
         class="dark:bg-white/[.1] rounded-[.25rem] px-[0rem] py-[0rem] pl-[.5rem] flex items-center space-x-[.5rem]"
+        transition:grow|local
       >
         <div>{options.find((option) => option.value === v).label}</div>
         <Button class="px-[.25rem] bg-transparent" on:click={() => removeValue(i)}>
@@ -97,4 +104,4 @@
   >
     <Icon src={X} />
   </Button>
-</div>
+</button>
