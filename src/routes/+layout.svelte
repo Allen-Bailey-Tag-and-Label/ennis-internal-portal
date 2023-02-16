@@ -68,20 +68,3 @@
 </svelte:head>
 
 <slot />
-
-<style>
-  :global(::-webkit-scrollbar) {
-    height: 0.5rem;
-    width: 0.5rem;
-  }
-  :global(::-webkit-scrollbar-corner) {
-    background: rgba(49, 56, 185, 0.1);
-  }
-  :global(::-webkit-scrollbar-thumb) {
-    background: rgb(49, 56, 185);
-    border-radius: 0.5rem;
-  }
-  :global(::-webkit-scrollbar-track) {
-    background: rgba(49, 56, 185, 0.1);
-  }
-</style>

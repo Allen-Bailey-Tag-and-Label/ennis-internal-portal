@@ -4,3 +4,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    @apply w-[.5rem] h-[.5rem];
+  }
+
+  ::-webkit-scrollbar-corner {
+    @apply bg-primary-500/[.1];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-500/[.1];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500 rounded-[.5rem];
+  }
+}
