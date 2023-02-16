@@ -1,13 +1,17 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import { Checkbox, Input, MultipleInput, Td } from '$components';
+  import { Checkbox, Input, MultipleInput, Select, Td } from '$components';
 
   // utilities
   const tdClasses = () =>
     twMerge(
       'h-[inherit]',
       type === 'checkbox' ? 'py-[.375rem]' : '',
-      type === 'date' || type === 'input' || type === 'int' || type === 'multipleInput'
+      type === 'date' ||
+        type === 'input' ||
+        type === 'int' ||
+        type === 'multipleInput' ||
+        type === 'select'
         ? 'relative px-0 py-0 ring-0'
         : '',
       $$props.class
@@ -83,6 +87,14 @@
   {/if}
   {#if type === 'multipleInput'}
     <MultipleInput
+      bind:value
+      class={twMerge('rounded-none', $$props.class)}
+      on:change={$$props?.changeHandler?.({ key, row, value })}
+      options={$$props.options}
+    />
+  {/if}
+  {#if type === 'select'}
+    <Select
       bind:value
       class={twMerge('rounded-none', $$props.class)}
       on:change={$$props?.changeHandler?.({ key, row, value })}

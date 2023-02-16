@@ -26,7 +26,10 @@
     main: 'transition duration-200 flex relative flex-grow overflow-hidden pt-0 pl-[max(1rem,_env(safe-area-inset-left))] pr-[max(1rem,_env(safe-area-inset-right))] pb-[1rem] lg:flex-col',
     modal: 'z-[3] isolate',
     nav: `${cardShadow} space-y-[2rem] justify-between transition duration-200 fixed top-0 right-0 w-[calc(100%_-_4rem)] min-h-screen max-h-screen bg-primary-500 z-[2] pt-[max(1rem,_env(safe-area-inset-top))] pb-[max(1rem,_env(safe-area-inset-bottom))] lg:right-auto lg:left-0 lg:w-[auto] lg:pt-[3.5rem]`,
+    option:
+      'bg-white dark:bg-gray-800 transition duration-200 hover:bg-primary-500 focus:bg-primary-500',
     overlay: 'h-screen z-[2] transition duration-200 cursor-pointer',
+    select: twMerge(input),
     table: 'bg-transparent dark:bg-transparent',
     td: 'outline-none ring-1 ring-transparent focus:ring-primary-500',
     th: 'z-[1] sticky top-0 transition duration-200 bg-primary-500 hover:bg-primary-600 text-white border-b-0 shadow-[inset_0_-1px_0_rgba(255,255,255,.3)] cursor-pointer',

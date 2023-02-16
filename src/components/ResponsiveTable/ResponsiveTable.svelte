@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { Card, Checkbox, Icon, Input, Table, Tbody, Th, Thead, Tr } from '$components';
   import { ChevronDown } from '$icons';
@@ -74,7 +73,7 @@
             >
               {th}
             </Checkbox>
-          {:else if type === 'date' || type === 'input' || type === 'int' || type === 'multipleInput' || type === 'string'}
+          {:else if type === 'date' || type === 'input' || type === 'int' || type === 'multipleInput' || type === 'select' || type === 'string'}
             {th}
           {/if}
           {#if key === sort?.key}

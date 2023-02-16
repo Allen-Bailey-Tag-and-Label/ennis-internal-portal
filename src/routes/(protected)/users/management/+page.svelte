@@ -45,20 +45,7 @@
     rows = [...rows, insertedDoc];
   };
   let collection = 'users';
-  let columns = [
-    { key: 'firstName', th: 'First' },
-    { key: 'lastName', th: 'Last' },
-    { key: 'email', th: 'Email' },
-    { key: 'ennisId', th: 'Ennis #', type: 'int' },
-    { key: 'extension', th: 'Extension', type: 'int' },
-    { key: 'hireDate', th: 'Hired', type: 'date' },
-    { key: 'initialPassword', th: 'Initial Password', type: 'int' },
-    { class: 'min-w-[40rem]', options: [], key: 'roles', th: 'Roles', type: 'multipleInput' },
-    { key: 'redirectSignIn', th: 'Sign In Route' },
-    { key: 'username', th: 'Username' },
-    { key: 'exempt', th: 'Exempt', type: 'checkbox' },
-    { key: 'isActive', th: 'Active', type: 'checkbox' }
-  ];
+  let columns = [];
   let rows: {}[] = [];
 
   // props (external)
@@ -66,18 +53,40 @@
 
   // lifecycle
   onMount(() => {
-    columns = columns.map((column) => {
-      if (column.key === 'roles')
-        return {
-          ...column,
-          options: data.roles
-            .map((role) => {
-              return { label: role.name, value: role._id };
-            })
-            .sort((a, b) => (a.label < b.label ? -1 : a.label > b.label ? 1 : 0))
-        };
-      return column;
-    });
+    columns = [
+      { key: 'firstName', th: 'First' },
+      { key: 'lastName', th: 'Last' },
+      { key: 'email', th: 'Email' },
+      { key: 'ennisId', th: 'Ennis #', type: 'int' },
+      { key: 'extension', th: 'Extension', type: 'int' },
+      { key: 'hireDate', th: 'Hired', type: 'date' },
+      { key: 'initialPassword', th: 'Initial Password', type: 'int' },
+      {
+        class: 'min-w-[40rem]',
+        options: data.roles
+          .map((role) => {
+            return { label: role.name, value: role._id };
+          })
+          .sort((a, b) => (a.label < b.label ? -1 : a.label > b.label ? 1 : 0)),
+        key: 'roles',
+        th: 'Roles',
+        type: 'multipleInput'
+      },
+      { key: 'redirectSignIn', th: 'Sign In Route' },
+      {
+        options: data.users
+          .map((user) => {
+            return { label: `${user.firstName} ${user.lastName}`, value: user._id };
+          })
+          .sort((a, b) => (a.label < b.label ? -1 : a.label > b.label ? 1 : 0)),
+        key: '_supervisorId',
+        th: 'Supervisor',
+        type: 'select'
+      },
+      { key: 'username', th: 'Username' },
+      { key: 'exempt', th: 'Exempt', type: 'checkbox' },
+      { key: 'isActive', th: 'Active', type: 'checkbox' }
+    ];
     rows = data.users;
   });
 </script>
