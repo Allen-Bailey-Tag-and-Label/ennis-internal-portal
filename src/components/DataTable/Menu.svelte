@@ -1,11 +1,42 @@
 <script lang="ts">
-  import { clickOutside } from '$actions';
+  import { clickOutside, copy, copyToClipboard } from '$actions';
   import { Button, Card, Icon, Modal } from '$components';
   import { Clipboard, DocumentDownload, DotsVertical, Exclamation, Plus, Trash } from '$icons';
   import MenuButton from './MenuButton.svelte';
 
   // handlers
+  const copyHandler = () => {
+    // get tsv (tab separated view)
+    const tsv = tableToString({ delimiter: '\t' });
+
+    copyToClipboard(tsv);
+  };
   const hideMenu = () => (isMenuOpen = false);
+  const tableToString = ({ delimiter = ',' }) => {
+    // get valid columns
+    const validColumns = columns.filter(({ key }) => key !== 'dtSelect');
+
+    // get headers
+    const headers = validColumns.map(({ th }) => th).join(delimiter);
+
+    // get body
+    const body = rows.map((row) =>
+      validColumns
+        .map(({ options, key, type }) => {
+          if (type === 'multipleInput')
+            return row[key]
+              .map((value) => options.find((option) => option.value === value).label)
+              .join(', ');
+          return row[key];
+        })
+        .join(delimiter)
+    );
+
+    // get string
+    const string = [headers, ...body].join('\n');
+
+    return string;
+  };
   const toggleMenu = () => (isMenuOpen = !isMenuOpen);
 
   // props (internal)
@@ -88,7 +119,9 @@
           >
         {/if}
         {#if isExportable}
-          <MenuButton {isMenuOpen} src={Clipboard}>Copy to Clipboard</MenuButton>
+          <MenuButton {isMenuOpen} on:copied={copyHandler} src={Clipboard} use={[copy]}
+            >Copy to Clipboard</MenuButton
+          >
         {/if}
         {#if selectedRows.length > 0}
           <MenuButton
