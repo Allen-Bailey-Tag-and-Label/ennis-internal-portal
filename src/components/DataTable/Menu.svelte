@@ -1,18 +1,50 @@
 <script lang="ts">
-  import { clickOutside, copy, copyToClipboard } from '$actions';
+  import { clickOutside, copyToClipboard } from '$actions';
+  import { browser } from '$app/environment';
   import { Button, Card, Icon, Modal } from '$components';
   import { Clipboard, DocumentDownload, DotsVertical, Exclamation, Plus, Trash } from '$icons';
   import MenuButton from './MenuButton.svelte';
 
   // handlers
-  const copyHandler = () => {
+  const copyToClipboardHandler = () => {
     // get tsv (tab separated view)
     const tsv = tableToString({ delimiter: '\t' });
 
+    // copy to clipboard
     copyToClipboard(tsv);
+
+    // close menu
+    isMenuOpen = false;
+  };
+  const csvClickHandler = () => {
+    if (browser) {
+      // create csv (comma separated view)
+      const csv = tableToString({ delimiter: ',', escapeCommas: true });
+
+      // create temporary link element
+      const linkElem = document.createElement('a');
+
+      // update link attribute to csv content
+      linkElem.setAttribute('href', `data:application/csv,${encodeURIComponent(csv)}`);
+
+      // update link download file name
+      linkElem.setAttribute('download', `export-${new Date().getTime()}.csv`);
+
+      // add link element to document
+      document.body.appendChild(linkElem);
+
+      // click link to download
+      linkElem.click();
+
+      // delete temporary link element
+      linkElem?.parentNode?.removeChild?.(linkElem);
+    }
   };
   const hideMenu = () => (isMenuOpen = false);
-  const tableToString = ({ delimiter = ',' }) => {
+  const tableToString = ({ delimiter = ',', escapeCommas = false }) => {
+    // escape comma helper function
+    const escapeCommasHelper = (value) => (!escapeCommas ? value : `"${value}"`);
+
     // get valid columns
     const validColumns = columns.filter(({ key }) => key !== 'dtSelect');
 
@@ -23,11 +55,14 @@
     const body = rows.map((row) =>
       validColumns
         .map(({ options, key, type }) => {
+          // type checkers
           if (type === 'multipleInput')
-            return row[key]
-              .map((value) => options.find((option) => option.value === value).label)
-              .join(', ');
-          return row[key];
+            return escapeCommasHelper(
+              row[key]
+                .map((value) => options.find((option) => option.value === value).label)
+                .join(', ')
+            );
+          return escapeCommasHelper(row[key]);
         })
         .join(delimiter)
     );
@@ -119,9 +154,9 @@
           >
         {/if}
         {#if isExportable}
-          <MenuButton {isMenuOpen} on:copied={copyHandler} src={Clipboard} use={[copy]}
-            >Copy to Clipboard</MenuButton
-          >
+          <MenuButton {isMenuOpen} on:click={copyToClipboardHandler} src={Clipboard}>
+            Copy to Clipboard
+          </MenuButton>
         {/if}
         {#if selectedRows.length > 0}
           <MenuButton
@@ -134,7 +169,9 @@
           >
         {/if}
         {#if isExportable}
-          <MenuButton {isMenuOpen} src={DocumentDownload}>Export CSV</MenuButton>
+          <MenuButton {isMenuOpen} on:click={csvClickHandler} src={DocumentDownload}
+            >Export CSV</MenuButton
+          >
         {/if}
       </Card>
     </div>
