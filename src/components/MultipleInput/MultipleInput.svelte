@@ -56,8 +56,12 @@
   );
 </script>
 
-<button class={containerClasses} on:click|self={toggleMenu} use:clickOutside={closeMenu}>
-  <div class="flex gap-[.5rem] px-[.5rem] flex-wrap items-center min-h-[2rem]">
+<div class={containerClasses} use:clickOutside={closeMenu}>
+  <button
+    class="flex flex-grow gap-[.5rem] px-[.5rem] flex-wrap items-center min-h-[2rem]"
+    on:click|self={toggleMenu}
+    tabindex="-1"
+  >
     {#each value as v, i}
       <div
         class="dark:bg-white/[.1] rounded-[.25rem] px-[0rem] py-[0rem] pl-[.5rem] flex items-center space-x-[.5rem]"
@@ -69,7 +73,7 @@
         </Button>
       </div>
     {/each}
-  </div>
+  </button>
   <Card
     class="absolute bottom-0 left-0 z-[2] w-full transition duration-200 px-[0] py-[.25rem] {!menuIsOpen
       ? 'opacity-0 pointer-events-none translate-y-[calc(100%_-_.5rem)]'
@@ -104,4 +108,4 @@
   >
     <Icon src={X} />
   </Button>
-</button>
+</div>
