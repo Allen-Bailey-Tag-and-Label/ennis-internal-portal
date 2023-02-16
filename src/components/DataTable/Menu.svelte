@@ -43,7 +43,7 @@
   const hideMenu = () => (isMenuOpen = false);
   const tableToString = ({ delimiter = ',', escapeCommas = false }) => {
     // escape comma helper function
-    const escapeCommasHelper = (value) => (!escapeCommas ? value : `"${value}"`);
+    const escapeCommasHelper = (value: string) => (!escapeCommas ? value : `"${value}"`);
 
     // get valid columns
     const validColumns = columns.filter(({ key }) => key !== 'dtSelect');
@@ -62,6 +62,8 @@
                 .map((value) => options.find((option) => option.value === value).label)
                 .join(', ')
             );
+          if (type === 'select')
+            return escapeCommasHelper(options.find((option) => option.value === row[key]).label);
           return escapeCommasHelper(row[key]);
         })
         .join(delimiter)
