@@ -64,25 +64,28 @@
   >
     {#each value as v, i}
       <div
-        class="dark:bg-white/[.1] rounded-[.25rem] px-[0rem] py-[0rem] pl-[.5rem] flex items-center space-x-[.5rem]"
+        class="bg-black/[.1] dark:bg-white/[.1] rounded-[.25rem] px-[0rem] py-[0rem] pl-[.5rem] flex items-center space-x-[.5rem]"
         transition:grow|local
       >
         <div>{options.find((option) => option.value === v).label}</div>
-        <Button class="px-[.25rem] bg-transparent" on:click={() => removeValue(i)}>
+        <Button
+          class="px-[.25rem] bg-transparent text-current hover:text-white focus:text-white"
+          on:click={() => removeValue(i)}
+        >
           <Icon class="w-[1rem] h-[1rem]" src={X} />
         </Button>
       </div>
     {/each}
   </button>
   <Card
-    class="absolute bottom-0 left-0 z-[2] w-full transition duration-200 px-[0] py-[.25rem] {!menuIsOpen
+    class="absolute bottom-0 left-0 z-[2] w-full transition duration-200 px-[0] py-[.25rem] space-y-[1px] {!menuIsOpen
       ? 'opacity-0 pointer-events-none translate-y-[calc(100%_-_.5rem)]'
       : 'opacity-100 pointer-events-auto translate-y-[100%]'}"
   >
     {#each options as option}
       <Button
         class="justify-start rounded-none {!value.includes(option.value)
-          ? 'bg-transparent'
+          ? 'bg-transparent text-current hover:text-white focus:text-white'
           : 'bg-primary-500'}"
         on:click={() => optionClickHandler(option)}
         tabindex={!menuIsOpen ? '-1' : undefined}
@@ -92,7 +95,7 @@
     {/each}
   </Card>
   <Button
-    class="absolute top-0 right-[2.5rem] px-[.5rem] bg-transparent"
+    class="absolute top-0 right-[2.5rem] px-[.5rem] bg-transparent text-current hover:text-white focus:text-white"
     on:click={toggleMenu}
     tabindex="-1"
   >
@@ -102,7 +105,7 @@
     />
   </Button>
   <Button
-    class="absolute top-0 right-0 px-[.5rem] bg-transparent"
+    class="absolute top-0 right-0 px-[.5rem] bg-transparent text-current hover:text-white focus:text-white"
     on:click={clearValues}
     tabindex="-1"
   >
