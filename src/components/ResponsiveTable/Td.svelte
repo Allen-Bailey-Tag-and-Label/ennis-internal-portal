@@ -73,7 +73,7 @@
   {#if type === 'multipleInput'}
     <MultipleInput
       bind:value
-      class={$$props.class}
+      class="rounded-none {$$props.class}"
       on:change={$$props?.changeHandler?.({ key, row, value })}
       options={$$props.options}
     />
