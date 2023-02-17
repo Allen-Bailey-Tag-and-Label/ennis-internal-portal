@@ -17,23 +17,14 @@
       $$props.class
     );
 
-  // props (internal)
-  let clientWidth: number = 0;
-  let style: string | undefined = undefined;
-
   // props (external)
   export let key: string = '';
   export let row: {} = {};
   export let type: string = 'input';
   export let value: any = '';
-
-  // props (dynamic)
-  $: if (type === 'input') {
-    style = `min-width: ${clientWidth}px`;
-  }
 </script>
 
-<Td class={tdClasses()} {style}>
+<Td class={tdClasses()}>
   {#if type === 'checkbox'}
     <Checkbox
       bind:checked={value}
