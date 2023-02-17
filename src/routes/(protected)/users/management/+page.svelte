@@ -19,7 +19,7 @@
       .toString()
       .padStart(6, '0');
     doc.password = JSON.stringify(crypto.SHA256(doc.initialPassword).words);
-    doc.roles = [data.roles.find((role) => role.name === 'User')._id];
+    doc.roles = [];
 
     // create formData
     const formData = new FormData();
