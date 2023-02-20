@@ -40,7 +40,7 @@ const protectedRoutesHandle: Handle = async ({ event, resolve }) => {
         if (!(route?.group in obj)) obj[route?.group] = [];
 
         // add route to group
-        obj[route?.group] = [...obj[route?.group], { name: route.name, route: route.route }];
+        obj[route?.group] = [...obj[route?.group], { ...route }];
 
         return obj;
       }, {});

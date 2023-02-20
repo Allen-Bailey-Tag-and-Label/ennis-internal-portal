@@ -21,7 +21,7 @@
     .map((key) => data.user.navigation[key])
     .flat();
   $: currentRoute = flatNavigation.find((item) => item.route === $page.url.pathname) || {
-    name: ''
+    title: ''
   };
 </script>
 
@@ -78,7 +78,12 @@
       ? -navWidth
       : navWidth - 40}px)"
   >
-    <RouteTitle>{currentRoute.name}</RouteTitle>
+    <RouteTitle>
+      {#if currentRoute?.group !== '' && currentRoute?.group !== undefined}
+        {currentRoute.group} -
+      {/if}
+      {currentRoute.name}
+    </RouteTitle>
     <slot {data} />
   </Main>
 </div>
