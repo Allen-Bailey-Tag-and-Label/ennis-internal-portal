@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { Button, Form, Icon, Header, Main, Nav, Overlay, RouteTitle } from '$components';
+  import { Button, Form, Icon, Header, Main, Nav, Overlay } from '$components';
   import { MenuAlt4, X } from '$icons';
   import type { LayoutData } from './$types';
 
@@ -15,14 +14,6 @@
 
   // props (external)
   export let data: LayoutData;
-
-  // props (dynamic)
-  $: flatNavigation = Object.keys(data.user.navigation)
-    .map((key) => data.user.navigation[key])
-    .flat();
-  $: currentRoute = flatNavigation.find((item) => item.route === $page.url.pathname) || {
-    title: ''
-  };
 </script>
 
 <div
@@ -76,14 +67,8 @@
       ? 0
       : layoutWidth < 1024
       ? -navWidth
-      : navWidth - 40}px)"
+      : navWidth - 32}px)"
   >
-    <RouteTitle>
-      {#if currentRoute?.group !== '' && currentRoute?.group !== undefined}
-        {currentRoute.group} -
-      {/if}
-      {currentRoute.name}
-    </RouteTitle>
     <slot {data} />
   </Main>
 </div>
