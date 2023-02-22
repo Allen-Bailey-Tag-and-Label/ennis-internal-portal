@@ -7,6 +7,8 @@ export const verifyAuthToken: Handle = async ({ event }) => {
   // get authToken cookie
   let authToken = event.cookies.get('authToken');
 
+  if (authToken === undefined) throw 'Missing authToken';
+
   // decode authToken
   const { username } = jwt.verify(authToken, JWT_SECRET);
 

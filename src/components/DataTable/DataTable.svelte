@@ -4,7 +4,6 @@
 
   // handlers
   const rowSelectChangeHandler = (e) => {
-    console.log('yup', e.target.checked);
     rows = rows.map((row) => {
       row.dtSelect = !e.target.checked;
       return row;

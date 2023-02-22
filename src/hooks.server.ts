@@ -9,11 +9,10 @@ const protectedRoutesHandle: Handle = async ({ event, resolve }) => {
     ['roles', 'routes'].map(async (collection) => await db.find({ collection, query: {} }))
   );
 
-  // map to just the route name
-  const pathNames = [...routes].map(({ route }) => route);
-
   // check if route is protected
-  if (pathNames.includes(event.url.pathname)) {
+  if (
+    [...routes].filter(({ route }) => new RegExp(route, 'gi').test(event.url.pathname)).length > 0
+  ) {
     try {
       // verify authToken
       const user = await verifyAuthToken({ event });

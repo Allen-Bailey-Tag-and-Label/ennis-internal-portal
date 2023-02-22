@@ -48,7 +48,9 @@
         type?: string | undefined;
       }[]
     | undefined = [];
-  export let deleteHandler = async () => {
+  export let deleteHandler = async (e) => {
+    e.preventDefault();
+
     // initiate query
     const query: { $or: { [key: string]: string }[] } = { $or: [] };
 

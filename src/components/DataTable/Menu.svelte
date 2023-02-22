@@ -1,6 +1,7 @@
 <script lang="ts">
   import { clickOutside, copyToClipboard } from '$actions';
   import { browser } from '$app/environment';
+  import { enhance } from '$app/forms';
   import { Button, Card, Icon, Modal } from '$components';
   import { Clipboard, DocumentDownload, DotsVertical, Exclamation, Plus, Trash } from '$icons';
   import MenuButton from './MenuButton.svelte';
@@ -102,17 +103,29 @@
   export let isAddable = true;
   export let isDeleteable = true;
   export let isExportable = true;
-  export let deleteHandler = () => {
+  export let deleteHandler = (e) => {
+    e.preventDefault();
     rows = rows.filter((row) => !row?.dtSelect);
   };
   export let rows: { [key: string]: any }[] = [];
+  export let submitHandler = async (e) => {
+    await deleteHandler(e);
+    isDeleteModalOpen = false;
+  };
 
   // props (dynamic)
   $: selectedRows = [...rows].filter((row) => row?.dtSelect);
   $: shouldShowOptions = isAddable || isDeleteable || isExportable;
 </script>
 
-<Modal bind:confirmHandler={deleteHandler} bind:isOpen={isDeleteModalOpen} showHeader={false}>
+<Modal
+  action={undefined}
+  bind:isOpen={isDeleteModalOpen}
+  bind:submitHandler
+  method={undefined}
+  showHeader={false}
+  use={[]}
+>
   <svelte:fragment slot="body">
     <div class="flex flex-col  space-y-[1rem]">
       <div class="text-center text-[1.5rem] font-semibold">Delete rows?</div>
