@@ -1,5 +1,6 @@
 import { MongoClient } from 'mongodb';
 import { MONGO_DB, MONGO_MAX_POOL_SIZE, MONGO_PASSWORD, MONGO_URI } from '$env/static/private';
+import { object } from 'webidl-conversions';
 
 const client = new MongoClient(
   MONGO_URI.replace('?retryWrites', `${MONGO_DB}?retryWrites`).replace(
@@ -80,4 +81,19 @@ const insertOne = async ({ collection, doc }: { collection: string; doc: object 
   return JSON.parse(JSON.stringify(createdDoc));
 };
 
-export { deleteMany, find, findOne, findOneAndUpdate, insertOne };
+const updateMany = async ({
+  collection,
+  query,
+  update
+}: {
+  collection: string;
+  query: object;
+  update: object;
+}) => {
+  // await connection
+  await connect();
+
+  await client.db().collection(collection).updateMany(query, update);
+};
+
+export { deleteMany, find, findOne, findOneAndUpdate, insertOne, updateMany };

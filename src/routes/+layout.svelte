@@ -32,6 +32,7 @@
     select: twMerge(input),
     table: 'bg-transparent dark:bg-transparent',
     td: 'outline-none ring-1 ring-transparent focus:ring-primary-500',
+    textarea: `${input}`,
     th: 'z-[1] sticky top-0 transition duration-200 bg-primary-500 hover:bg-primary-600 text-white border-b-0 shadow-[inset_0_-1px_0_rgba(255,255,255,.3)] cursor-pointer',
     tr: 'transition duration-200 odd:bg-black/[.05] dark:odd:bg-white/[.05] hover:bg-primary-500/[.15] odd:hover:bg-primary-500/[.1] dark:hover:bg-primary-500/[.1] dark:odd:hover:bg-primary-500/[.15]'
   });

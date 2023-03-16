@@ -1,6 +1,6 @@
 export const currency = (
   value: bigint | number | string,
-  params: { locale?: string; options: { currency: string; style: string } }
+  params?: { locale?: string; options: { currency?: string; style?: string; [key: string]: any } }
 ) => {
   // merge options
   params = Object.assign(
