@@ -1,1 +1,0 @@
-export { verifyAuthToken } from './verifyAuthToken';

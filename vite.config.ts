@@ -1,11 +1,18 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
+import { resolve } from 'path';
 
-const config: UserConfig = {
-  plugins: [sveltekit()],
-  test: {
-    include: ['src/**/*.{test,spec}.{js,ts}']
-  }
+const config = {
+	plugins: [sveltekit()],
+	resolve: {
+		alias: {
+			$components: resolve('./src/components'),
+			$db: resolve('./src/db'),
+			$icons: resolve('./src/icons'),
+			$lib: resolve('./src/lib'),
+			$routes: resolve('./src/routes'),
+			$src: resolve('./src')
+		}
+	}
 };
 
 export default config;

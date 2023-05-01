@@ -1,21 +1,20 @@
 const { tailwindcssPaletteGenerator } = require('@bobthered/tailwindcss-palette-generator');
-
 const config = {
-  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/sveltewind/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/sveltewind/**/*.{html,js,svelte,ts}'],
 
-  theme: {
-    extend: {
-      colors: tailwindcssPaletteGenerator({
-        colors: ['#3a41cb', '#1c78e9', '#76778f'],
-        names: ['primary', 'secondary', 'gray']
-      }),
-      fontFamily: {
-        sans: ['Montserrat', 'sans-serif']
-      }
-    }
-  },
+	theme: {
+		extend: {
+			colors: tailwindcssPaletteGenerator({
+				colors: ['#4158D0', '#C850C0', '#7e8295'],
+				names: ['primary', 'secondary', 'gray']
+			}),
+			fontFamily: {
+				sans: ['Montserrat', 'sans-serif']
+			}
+		}
+	},
 
-  plugins: []
+	plugins: []
 };
 
 module.exports = config;
