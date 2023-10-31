@@ -14,17 +14,20 @@
 
 	// props (internal)
 	const nav = [
-		{ href: '/', text: 'New' },
+		{ href: '/multiple-addresses', text: 'Multiple Addresses' },
+		{ href: '/new', text: 'New' },
 		{ href: '/quote', text: 'Quote Finder' }
 	];
 
 	theme.set({
 		a: 'shadow-none',
 		aButton: $theme.button,
+		button: 'disabled:bg-gray-500',
+		buttonIcon: 'px-[.5rem]',
 		option: 'dark:bg-gray-900',
 		table: 'print:shadow-none',
 		td: 'print:px-0',
-		th: 'dark:bg-white/[.025]',
+		th: 'dark:bg-white/[.025] border-0',
 		tr: 'print:border-b-0'
 	});
 

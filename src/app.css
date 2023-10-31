@@ -2,3 +2,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+	touch-action: manipulation;
+}
+
+::-webkit-scrollbar {
+	@apply h-[.5rem] w-[.5rem];
+}
+
+::-webkit-scrollbar-corner {
+	@apply bg-transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	@apply rounded-full bg-black/[.1];
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	@apply rounded-full bg-blue-500;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-blue-600;
+}
