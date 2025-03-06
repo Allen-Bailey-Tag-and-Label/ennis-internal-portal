@@ -184,14 +184,14 @@
 			if (Candidate === undefined) throw 'Address could not be validated';
 
 			// check if multiple candidates
-			if (Array.isArray(Candidate)) {
+			if (Array.isArray(Candidate) && Candidate.length > 1) {
 				modal.progress.validation.show = false;
 				modal.candidate.candidates = Candidate;
 				modal.candidate.show = true;
 				throw 'Multiple candidates were found';
 			}
 
-			const { AddressClassification, AddressKeyFormat } = Candidate;
+			const { AddressClassification, AddressKeyFormat } = Candidate[0];
 			classification = AddressClassification.Description;
 			updateShipToAddress(AddressKeyFormat);
 		} catch (error) {
